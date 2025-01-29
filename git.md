@@ -7,7 +7,7 @@
 
 # 🌟 Tema 1: **Dominando Git**
 
----
+<!-- 
 ### 🎥 Videos que inspiran este tema:
 
 <table style="border-collapse: collapse; width: 100%; border: none; margin: 10px 0;">
@@ -48,7 +48,7 @@ Profesorcito © 2025
 
 Chester Bennington 🕊️ (2017)
 
----
+--- -->
 
 En este curso de **Programación Orientada a Objetos (POO)** 🔥 con **C++** 💻, exploraremos conceptos clave como **clases**, **objetos** y **herencia** 🚀. Aprenderás cómo aplicar estos principios de forma efectiva para crear proyectos potentes. Pero antes de sumergirnos en la programación, es esencial que dominemos una herramienta fundamental para gestionar el código de manera eficiente: **Git** 🧑‍💻.
 
