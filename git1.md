@@ -2,8 +2,11 @@
 ---
 
 # 💻 300CIS017 Programación Orientada a Objetos 2025-01  
+![Version](https://img.shields.io/badge/version-1.1-blue)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ---
+
 
 # 🌟 Tema 1: **Dominando Git**
 
@@ -510,7 +513,7 @@ El comando `clear` se utiliza para limpiar la pantalla de la terminal. Cuando lo
 clear
 ```
 
-Un atajo de teclado que hace lo mismo es `Ctrl + L`. Si prefieres no escribir el comando, simplemente presiona **Ctrl** y **L** al mismo tiempo y la pantalla se limpiará al instante. ¡Es aún más rápido! ⚡
+Un atajo de teclado que hace lo mismo es <kbd>Ctrl</kbd>+<kbd>L</kbd>. Si prefieres no escribir el comando, simplemente presiona <kbd>Ctrl</kbd> y <kbd>L</kbd> al mismo tiempo y la pantalla se limpiará al instante. ¡Es aún más rápido! ⚡
 
 ### * `pwd`: Conocer tu ubicación en el sistema
 
@@ -1145,7 +1148,7 @@ git diff
 ```
 
 **Salida esperada:**  
-```plaintext
+```diff
 diff --git a/ciudades.txt b/ciudades.txt
 index e69de29..9d53851 100644
 --- a/ciudades.txt
@@ -1227,7 +1230,7 @@ git diff --staged
 ```
 
 **Salida esperada:**  
-```plaintext
+```diff
 diff --git a/ciudades.txt b/ciudades.txt
 index e69de29..9d53851 100644
 --- a/ciudades.txt
