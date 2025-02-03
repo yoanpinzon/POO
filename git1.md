@@ -2,7 +2,7 @@
 ---
 
 # 💻 300CIS017 Programación Orientada a Objetos 2025-01  
-![Version](https://img.shields.io/badge/version-1.1-blue)
+![Version](https://img.shields.io/badge/version-2.0-blue)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ---
@@ -82,7 +82,11 @@ En este curso de **Programación Orientada a Objetos (POO)** 🔥 con **C++** �
       - [git push](#-git-push-subir-cambios-al-repositorio-remoto)
       - [git pull](#-git-pull-traer-cambios-del-repositorio-remoto)
       - [git clone](#git-clone-crear-una-copia-local-de-un-repositorio-remoto-️) 
-6. [Prácticas](#prácticas)  
+6. [**Manejo de Conflictos en Git**](#6-manejo-de-conflictos-en-git)
+    - [**Conflictos en `git merge` 🌀**](#conflictos-en-git-merge-)
+    - [**Conflictos en `git push` 🚀**](#conflictos-en-git-push-)
+    - [**Conflictos en `git pull` ⬇️**](#conflictos-en-git-pull-️)
+7. [**Prácticas**](#prácticas)  
     - [Práctica #1](#práctica-1-usando-git-init-️) Usando `git init` 🖥️
     - [Práctica #2 ](#práctica-2-usando-git-add-git-status-y-git-commit-)  Usando `git add`, `git status` y `git commit` 📝
     - [Práctica #3](#práctica-3-usando-git-log-y-git-diff-) Usando `git log` y `git diff` 🔍
@@ -90,7 +94,7 @@ En este curso de **Programación Orientada a Objetos (POO)** 🔥 con **C++** �
     - [Práctica #5](#práctica-5-usando-git-merge-) Usando `git merge` 🔗 
     - [Práctica #6](#práctica-6-usando-git-push-) Usando `git push` 📤 
     - [Práctica #7](#práctica-7-usando-git-pull-️) Usando `git pull` ⬇️ 
-
+    - [Práctica #8](#práctica-8-manejo-de-conflictos-en-git-merge-️) Manejo de Conflictos en `git merge` ⚠️
 ---
 
 # 1. Introducción a Git
@@ -2381,6 +2385,514 @@ git clone https://github.com/profe/mirepo.git
 > 
 > Ahorras el `git checkout ramab` posterior. ⏱️ 
 
+&nbsp;&nbsp;&nbsp;[↩️](#tabla-de-contenido)
+
 ---
 
+
+# 6. Manejo de Conflictos en Git  
+
+Cuando trabajamos con Git en equipo o en proyectos individuales, es común encontrarnos con conflictos 🔥. Estos ocurren cuando Git no puede fusionar automáticamente los cambios entre dos versiones de un archivo y necesita que el usuario los resuelva manualmente.  
+
+Los conflictos pueden aparecer en diferentes situaciones:  
+
+### **Conflictos en `git merge` 🌀**  
+Ocurren cuando intentamos fusionar dos ramas y ambas han modificado la misma línea de un archivo.  
+- Git no puede decidir qué versión conservar y nos pide que resolvamos el conflicto manualmente.  
+- Se deben editar los archivos afectados y luego confirmar los cambios.  
+- Este tipo de conflicto será el enfoque de la [Práctica #8](#práctica-8-manejo-de-conflictos-en-git-merge-️).  
+
+### **Conflictos en `git push` 🚀**  
+Aparecen cuando intentamos subir cambios (`push`) al repositorio remoto, pero este ha recibido modificaciones desde la última vez que descargamos el código.  
+- Git rechaza el `push` para evitar sobrescribir cambios de otros colaboradores.  
+- Se resuelve trayendo los cambios remotos (`git pull`) antes de intentar el `push` nuevamente.  
+
+### **Conflictos en `git pull` ⬇️**  
+Suceden cuando intentamos actualizar nuestro repositorio local con `git pull`, pero hay cambios sin confirmar en nuestra máquina que entran en conflicto con los cambios del remoto.  
+- Git no puede fusionar los cambios automáticamente.  
+- Es necesario guardar o descartar los cambios locales antes de hacer el `pull`.  
+
+A continuación, en la [Práctica #8](#práctica-8-manejo-de-conflictos-en-git-merge-️) daremos un ejemplo completo de cómo manejar conflictos en el caso de un `merge`.** 🚀
+
+## Práctica #8: Manejo de Conflictos en `git merge` ⚠️  
+
+En esta práctica trabajaremos con un archivo llamado `cuento.md`, donde escribiremos un breve cuento y provocaremos un conflicto en la segunda línea.  
+
+1. Creamos un repositorio con algunos commits en `master`.  
+2. Creamos una rama y realizamos un **merge sin conflictos**.  
+3. Creamos otra rama y editamos **la segunda línea** del cuento en `master` y en la nueva rama, provocando un **conflicto en `git merge`**.  
+4. Usamos `git status` para ver los archivos en conflicto.  
+5. Resolvemos el conflicto manualmente y verificamos el resultado con `cat`.  
+
+---
+
+### **1. Configurar el repositorio y hacer algunos commits**  <!-- omit in toc -->  
+
+📌 **Creamos el repositorio en el escritorio (`~/Desktop`) y entramos en la carpeta:**  
+
+```bash
+cd ~/Desktop
+mkdir practica-merge
+cd practica-merge
+git init
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Initialized empty Git repository in C:/Users/Portatil/Desktop/practica-merge/.git/
+```
+
+**¿Qué estamos haciendo aquí?**  
+- Creamos una nueva carpeta `practica-merge` en el escritorio.  
+- Entramos en la carpeta recién creada.  
+- Inicializamos un repositorio de Git con `git init`, lo que nos permitirá realizar seguimiento de los cambios.  
+
+📌 **Creamos el archivo `cuento.md` y escribimos la primera línea del cuento:**  
+
+```bash
+echo "El bosque era inmenso." > cuento.md
+git add cuento.md
+git commit -m "Primera línea del cuento"
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+[master (root-commit) 2ae03e5] Primera línea del cuento
+ 1 file changed, 1 insertion(+)
+ create mode 100644 cuento.md
+```
+
+**¿Qué hace este comando?**  
+- `echo "El bosque era inmenso." > cuento.md` → Crea el archivo `cuento.md` con la primera línea del cuento.  
+- `git add cuento.md` → Agrega el archivo al área de preparación de Git.  
+- `git commit -m "Primera línea del cuento"` → Guarda el primer commit con la línea inicial del cuento.  
+
+📌 **Agregamos la segunda línea y hacemos otro commit:**  
+
+```bash
+echo "Un zorro curioso lo exploraba." >> cuento.md
+git commit -am "Segunda línea del cuento"
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+[master 2cc03df] Segunda línea del cuento
+ 1 file changed, 1 insertion(+)
+```
+
+**Explicación:**  
+- `>>` significa **agregar** texto al archivo sin sobrescribirlo.  
+- `git commit -am "Segunda línea del cuento"` realiza dos acciones en un solo comando:  
+  - `-a` → Agrega automáticamente los archivos ya versionados.  
+  - `-m` → Permite escribir un mensaje en el commit.  
+
+📌 **Agregamos la tercera línea y hacemos otro commit:**  
+
+```bash
+echo "Un día encontró un sendero." >> cuento.md
+git commit -am "Tercera línea del cuento"
+```
+
+📌 **Verificamos el historial con `git log --oneline` para entender el progreso:**  
+
+```bash
+git log --oneline
+```
+
+🔍 **Salida esperada:**  
+
+```
+e736bbb (HEAD -> master) Tercera línea del cuento
+2cc03df Segunda línea del cuento
+2ae03e5 Primera línea del cuento
+```
+
+**Explicación:**  
+- `git log --oneline` muestra el historial de commits de forma compacta.  
+- `HEAD -> master` indica que estamos en la rama `master` y señala el commit más reciente.  
+- Cada línea representa un commit con su identificador único y el mensaje que le dimos.  
+
+---
+
+### **2. Crear una rama y hacer un merge sin conflicto**  <!-- omit in toc -->  
+
+📌 **Creamos una nueva rama `ramab`:**  
+
+```bash
+git checkout -b ramab
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Switched to a new branch 'ramab'
+```
+
+**¿Qué estamos haciendo?**  
+- `git checkout -b ramab` → Crea una nueva rama llamada `ramab` y cambia a ella automáticamente.  
+- Ahora podemos hacer cambios en `ramab` sin afectar `master`.  
+
+📌 **Añadimos una nueva línea que no genera conflicto:**  
+
+```bash
+echo "El sendero llevaba a un puente." >> cuento.md
+git commit -am "Cuarta línea del cuento"
+```
+
+📌 **Volvemos a `master` y fusionamos `ramab`:**  
+
+```bash
+git checkout master
+git merge ramab
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Updating e736bbb..c854729
+Fast-forward
+ cuento.md | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+**Explicación:**  
+- `git checkout master` → Volvemos a la rama principal (`master`).  
+- `git merge ramab` → Fusionamos los cambios de `ramab` en `master`.  
+
+📌 **Verificamos el contenido del archivo después del merge sin conflicto:**  
+
+```bash
+cat cuento.md
+```
+
+🔍 **Salida esperada:**  
+
+```plaintext
+El bosque era inmenso.
+Un zorro curioso lo exploraba.
+Un día encontró un sendero.
+El sendero llevaba a un puente.
+```
+
+**¿Por qué no hubo conflicto?**  
+- El cambio en `ramab` solo **añadió** una línea al final, sin modificar ninguna de las líneas existentes en `master`.  
+- Git pudo combinar ambas versiones sin problemas.  
+
+---
+
+### **3. Generar un conflicto en `git merge`** <!-- omit in toc -->  
+
+📌 **Creamos otra rama llamada `ramac`:**  
+
+```bash
+git checkout -b ramac
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Switched to a new branch 'ramac'
+```
+
+**¿Qué estamos haciendo?**  
+- `git checkout -b ramac` → Crea una nueva rama llamada `ramac` y cambia a ella automáticamente.  
+- Vamos a modificar el archivo en esta rama para generar un conflicto más adelante.  
+
+📌 **Modificamos la segunda línea en `ramac` usando Notepad:**  
+
+```bash
+notepad cuento.md
+```
+
+🔹 **Editamos la segunda línea del archivo:**  
+Reemplazamos la segunda línea, que originalmente decía `"Un zorro curioso lo exploraba."`, por `"Un zorro veloz lo recorría."`.  
+
+📌 **Guardamos** <kbd>CTRL + S</kbd> **y cerramos Notepad.**  
+
+📌 **Verificamos que la segunda línea cambió correctamente:**  
+
+```bash
+cat cuento.md
+```
+
+🔍 **Salida esperada:**  
+
+```plaintext
+El bosque era inmenso.
+Un zorro veloz lo recorría.
+Un día encontró un sendero.
+El sendero llevaba a un puente.
+```
+
+📌 **Confirmamos los cambios en `ramac`:**  
+
+```bash
+git commit -am "Modificada segunda línea en ramac"
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+[ramac 64d01ce] Modificada segunda línea en ramac
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+---
+
+📌 **Volvemos a `master` y modificamos la misma línea:**  
+
+```bash
+git checkout master
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Switched to branch 'master'
+```
+
+```bash
+notepad cuento.md
+```
+
+🔹 **Editamos la segunda línea del archivo:**  
+Reemplazamos la segunda línea, que originalmente decía `"Un zorro curioso lo exploraba."`, por `"Un zorro astuto lo habitaba."`.  
+
+📌 **Guardamos** <kbd>CTRL + S</kbd> **y cerramos Notepad.**  
+
+📌 **Verificamos que la segunda línea cambió correctamente en la rama `master`:**  
+
+```bash
+cat cuento.md
+```
+
+🔍 **Salida esperada:**  
+
+```plaintext
+El bosque era inmenso.
+Un zorro astuto lo habitaba.
+Un día encontró un sendero.
+El sendero llevaba a un puente.
+```
+
+📌 **Confirmamos los cambios en `master`:**  
+
+```bash
+git commit -am "Modificada segunda línea en master"
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+[master c023a21] Modificada segunda línea en master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+---
+
+📌 **Intentamos hacer `git merge ramac` y obtenemos un conflicto:**  
+
+```bash
+git merge ramac
+```
+
+🔍 **Salida esperada:**
+
+```plaintext
+Auto-merging cuento.md
+CONFLICT (content): Merge conflict in cuento.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+<h4>⚡ Hack</h4>  
+
+> ¡Advertencia! ⚠️ No lo uses en este momento, ya que estás en medio de una práctica y podría interferir con el flujo de trabajo que estás siguiendo. ❌  
+>  
+> Si durante un merge en Git decides que no quieres continuar, puedes abortarlo en cualquier momento. Para hacerlo, usa el comando:  
+>  
+>```bash  
+>git merge --abort  
+>```  
+
+
+📌 **Mostramos el contenido del archivo después del conflicto:**  
+
+```bash
+cat cuento.md
+```
+
+🔍 **Salida esperada:**  
+
+```plaintext
+El bosque era inmenso.
+<<<<<<< HEAD
+Un zorro astuto lo habitaba.
+=======
+Un zorro veloz lo recorría.
+>>>>>>> ramac
+Un día encontró un sendero.
+El sendero llevaba a un puente.
+```
+
+📌 **Explicación:**  
+
+Cuando Git intenta hacer un `merge`, pero encuentra cambios en la misma línea en ambas ramas, marca el conflicto en el archivo y nos deja resolverlo manualmente.  
+
+- **`<<<<<<< HEAD`** → Muestra la versión que está en la rama actual (`master`).  
+- **`Un zorro astuto lo habitaba.`** → Es el texto que estaba en `master`.  
+- **`=======`** → Separa las dos versiones en conflicto.  
+- **`Un zorro veloz lo recorría.`** → Es el texto que estaba en la rama `ramac`.  
+- **`>>>>>>> ramac`** → Indica que la segunda versión viene de la rama `ramac`.  
+
+**Git no puede decidir qué versión mantener, por lo que nos deja resolver el conflicto manualmente.**  
+
+
+> [!IMPORTANT]
+>
+> En resumen, los marcadores de conflicto en Git indican cambios incompatibles:
+>  
+> | **Marcador** | **Indica** |  
+> |-------------|-----------|  
+> | Comienzo de una versión | `<<<<<<<` |  
+> | División entre versiones | `=======` |  
+> | Comienzo de la otra versión | `>>>>>>>` |
+>
+
+---
+
+### **4. Ver el conflicto con `git status`**  <!-- omit in toc -->
+
+📌 **Ejecutamos `git status` para ver qué archivos tienen conflictos:**  
+
+```bash
+git status
+```
+
+🔍 **Salida esperada:**  
+
+```plaintext
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   cuento.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+📌 **Explicación:**  
+- Git nos informa que hay archivos en conflicto.  
+- `both modified: cuento.md` indica que **ambas ramas modificaron el archivo**.  
+- Nos sugiere que resolvamos el conflicto y usemos `git add` para marcarlo como resuelto antes de hacer el `commit`.  
+
+
+<details>
+<summary>💡 Hint: Usar git diff para ver las diferencias entre ramas antes del merge</summary>
+
+En cualquier momento, podemos comparar las diferencias entre las versiones de `cuento.md` en `master` y `ramac`:
+
+```bash
+git diff master ramac -- cuento.md
+```
+
+**Explicación del comando:**
+
+- `git diff`: Este comando muestra las diferencias entre dos versiones de un archivo o entre dos ramas.
+- `master`: Es la primera rama que estás comparando.
+- `ramac`: Es la segunda rama con la que comparas `master`.
+- `--`: Es utilizado para indicar que lo que sigue son **nombres de archivos** o **directorios**, y no más referencias a ramas o commits. Ayuda a evitar confusiones.
+- `cuento.md`: Es el archivo específico que estás comparando entre ambas ramas.
+
+
+🔍 **Salida esperada:**
+
+```diff
+diff --git a/cuento.md b/cuento.md
+index 7ec8750..648dac7 100644
+--- a/cuento.md
++++ b/cuento.md
+@@ -1,4 +1,4 @@
+ El bosque era inmenso.
+-Un zorro astuto lo habitaba.
++Un zorro veloz lo recorría.
+ Un día encontró un sendero.
+ El sendero llevaba a un puente.
+```
+
+</details>
+
+---
+
+### **5. Resolver el conflicto**  <!-- omit in toc -->
+
+📌 **Abrimos el archivo en Notepad para editarlo manualmente:**  
+
+```bash
+notepad cuento.md
+```
+
+🔹 **Editamos la línea en conflicto y combinamos ambas versiones:**  
+
+```plaintext
+El bosque era inmenso.
+Un zorro astuto y veloz lo exploraba.
+Un día encontró un sendero.
+El sendero llevaba a un puente.
+```
+
+📌 **Guardamos** <kbd>CTRL + S</kbd> **y cerramos Notepad.**  
+
+📌 **Marcamos el archivo como resuelto agregándolo al área de preparación:**  
+
+```bash
+git add cuento.md
+```
+
+📌 **Confirmamos la resolución del conflicto con un nuevo commit:**  
+
+```bash
+git commit -m "Conflicto resuelto en cuento.md"
+```
+
+🔍 **Salida esperada:**  
+
+```plaintext
+[master b01d48b] Conflicto resuelto en cuento.md
+```
+
+Este commit guarda los cambios y completa el `merge`, dejando el repositorio en un estado limpio sin conflictos pendientes. 🚀  
+
+✅ **¡Conflicto resuelto exitosamente!** 🎉  
+
+---
+
+### **Resumen comandos usados:**  <!-- omit in toc -->
+
+| Comando | Descripción |
+|---------|------------|
+| `git init` | Inicializa un nuevo repositorio |
+| `git merge <rama>` | Fusiona una rama con la actual |
+| `git log --oneline` | Muestra el historial de commits |
+| `notepad <archivo>` | Abre un archivo en Notepad |
+| `git status` | Muestra el estado del repositorio y los archivos en conflicto |
+| `git diff master ramac -- <archivo>` | Compara las diferencias entre dos ramas antes del merge |
+| `git add <archivo>` | Marca un archivo como resuelto |
+| `git commit -m "mensaje"` | Confirma la resolución del conflicto |
+
+---
+
+Aquí tienes una imagen que muestra cómo debería verse tu Git Bash después de ejecutar los comandos de esta práctica, para que tengas una referencia clara de lo que deberías ver:
+
+<p align="center">
+  <img src="img/git9.png" height="2500">
+</p>
+
+
 &nbsp;&nbsp;&nbsp;[↩️](#tabla-de-contenido)
+
