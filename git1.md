@@ -86,7 +86,8 @@ En este curso de **Programación Orientada a Objetos (POO)** 🔥 con **C++** �
     - [**Conflictos en `git merge` 🌀**](#conflictos-en-git-merge-)
     - [**Conflictos en `git push` 🚀**](#conflictos-en-git-push-)
     - [**Conflictos en `git pull` ⬇️**](#conflictos-en-git-pull-️)
-7. [**Prácticas**](#prácticas)  
+7. [**Moviéndonos en el Historial de Git](#7-moviéndonos-en-el-historial-de-git)
+8. [**Prácticas**](#prácticas)  
     - [Práctica #1](#práctica-1-usando-git-init-️) Usando `git init` 🖥️
     - [Práctica #2 ](#práctica-2-usando-git-add-git-status-y-git-commit-)  Usando `git add`, `git status` y `git commit` 📝
     - [Práctica #3](#práctica-3-usando-git-log-y-git-diff-) Usando `git log` y `git diff` 🔍
@@ -2893,6 +2894,195 @@ Aquí tienes una imagen que muestra cómo debería verse tu Git Bash después de
   <img src="img/git9.png" height="2500">
 </p>
 
+
+&nbsp;&nbsp;&nbsp;[↩️](#tabla-de-contenido)
+
+# 7. Moviéndonos en el Historial de Git  
+
+Git nos permite navegar entre diferentes versiones de nuestro proyecto, ya sea para revisar cambios previos, deshacer errores o incluso recuperar versiones antiguas. En este capítulo, aprenderás cómo moverte en el historial de commits sin perder información.  
+
+A lo largo de esta sección, exploraremos tres comandos esenciales:  
+
+- **`git checkout <commit>`**: Para movernos a un commit específico.  
+- **`git reset`**: Para deshacer commits y regresar a un estado anterior.  
+- **`git revert`**: Para deshacer cambios sin modificar el historial.  
+
+Con estos comandos, podrás viajar en el tiempo dentro de tu repositorio y manejar de forma segura los cambios en tu código.  
+
+---
+
+### * `git checkout`: Movernos a un commit específico  
+
+Git es como una **máquina del tiempo** para tu código. A veces necesitas retroceder para revisar un cambio, ver cómo estaba tu código hace unos días o depurar errores. Para eso, Git tiene varios **atajos geniales** para moverte en el historial.  
+
+> [!NOTE]  
+> Desde 2019, Git introdujo `git switch` como una alternativa más clara y específica para cambiar de rama. Aun así, `git checkout` sigue funcionando y muchos desarrolladores siguen usándolo por costumbre o compatibilidad.  
+
+La mayoría de los desarrolladores suelen hacerlo de la siguiente manera:  
+
+① **Ver el historial en versión corta:**  
+   ```bash
+   git log --oneline
+   ```
+   Esto mostrará algo como esto:  
+   ```plaintext
+   * a1b2c3d (HEAD -> master) Fix en validación de formulario  
+   * f6g7h8i Nueva funcionalidad de login  
+   * j9k0l1m Implementación de API  
+   * c2d3e4f Refactorización del código  
+   * g4h5i6j Mejora en la documentación  
+   * k7l8m9n Eliminación de código obsoleto  
+   * p0q1r2s Configuración inicial de CI/CD  
+   * t3u4v5w Agregado soporte para logs  
+   * x6y7z8a Estructura base del proyecto  
+   * b9c0d1e Commit inicial  
+   ```
+
+   Aquí, `HEAD -> master` indica la posición actual de `HEAD`, es decir, el último commit en la rama `master`.  
+
+② **Copiar el hash del commit al que quieres ir.**  
+
+③ **Usar `git checkout` para moverte a un commit específico:**  
+   ```bash
+   git checkout c2d3e4f
+   ```
+   `HEAD` ahora pasará a estar en `c2d3e4f` (**Refactorización del código**).  
+
+---
+
+También es posible retroceder sin necesidad de copiar un hash, usando atajos más rápidos:  
+
+✅ **Un paso atrás**  
+   ```bash
+   git checkout HEAD^
+   ```  
+   Si `HEAD` se encontraba en `a1b2c3d`, ahora pasará a estar en `f6g7h8i` (**Nueva funcionalidad de login**).  
+
+   > [!TIP]  
+   > ```bash
+   > git checkout -
+   > ```  
+   > Vuelve a la rama o commit anterior en un solo paso. 🔄✨
+
+✅ **Dos pasos atrás**  
+   ```bash
+   git checkout HEAD^^
+   ```  
+   Si `HEAD` se encontraba en `a1b2c3d`, ahora pasará a estar en `j9k0l1m` (**Implementación de API**).  
+
+✅ **Tres pasos atrás**  
+   ```bash
+   git checkout HEAD^^^
+   ```  
+   Si `HEAD` se encontraba en `a1b2c3d`, ahora pasará a estar en `c2d3e4f` (**Refactorización del código**).  
+
+✅ **Retroceder N commits**  
+   ```bash
+   git checkout HEAD~5
+   ```
+   Si `HEAD` se encontraba en `a1b2c3d`, ahora pasará a estar en `k7l8m9n` (**Eliminación de código obsoleto**).  
+
+✅ **Saltar a un commit y retroceder desde ahí**  
+```bash
+git checkout c2d3e4f
+git checkout HEAD^^
+```  
+No importa en qué commit estés, este comando **primero te lleva a `c2d3e4f`** (**Refactorización del código**) y luego **retrocede dos commits más**, aterrizando en `k7l8m9n` (**Eliminación de código obsoleto**).  
+
+> <h4>⚡ Hack</h4>  
+>  
+> Hazlo en **un solo comando**:  
+> ```bash
+> git checkout c2d3e4f^^
+> ```  
+> Salta directamente a `c2d3e4f` y retrocede dos commits **sin interrupciones. Pero shhh... que esto quede entre nosotros. 🤫
+>
+
+✅ **Retroceder desde una rama específica (`ramab`)**  
+   ```bash
+   git checkout ramab^^
+   ```
+   Si `HEAD` estaba en la punta de la rama `ramab`, ahora pasará a estar dos commits atrás en la misma rama.  
+
+📌 **Ejemplo:**  
+```bash
+git checkout ramab~5
+```
+Si `HEAD` estaba en la punta de `ramab`, ahora pasará a estar **cinco commits atrás** en la misma rama.  
+
+---
+
+### 🚨 ¿Qué es el "detached HEAD"?  
+
+Cuando usas `git checkout <commit>` o cualquiera de los atajos anteriores, **HEAD deja de seguir una rama y se posiciona en un commit específico**. Esto se conoce como **detached HEAD**, y significa que:  
+
+✅ Puedes ver el código tal como estaba en ese commit.  
+❌ No estás en ninguna rama.  
+⚠️ Si haces cambios aquí y no los guardas, **se perderán al cambiar de commit**.  
+
+Cuando HEAD está "desconectado", no apunta a ninguna rama en particular, sino solo a un commit específico.  
+
+> **Tip:** Si quieres modificar el código sin perderlo, **crea una nueva rama antes de hacer cambios**:  
+> ```bash
+> git checkout -b mi-nueva-rama
+> ```
+
+---
+
+### 🔍 ¿Cómo saber si estás en "detached HEAD"?  
+
+Después de moverte con `git checkout <commit>`, Git te lo advertirá con un mensaje como este:  
+
+```plaintext
+Note: switching to 'c2d3e4f'.
+
+You are in 'detached HEAD' state.
+```
+
+También puedes verificarlo manualmente con:  
+```bash
+git status
+```
+Si estás en detached HEAD, verás algo como esto:  
+
+```plaintext
+HEAD detached at c2d3e4f
+```
+
+---
+
+### ⏩ ¿Cómo volver a la normalidad?  
+
+Si solo querías explorar un commit y regresar, usa:  
+
+```bash
+git checkout master  # O la rama en la que estabas antes
+```
+
+Esto te devuelve a una **rama activa**, evitando que Git borre tu trabajo.
+
+Si no recuerdas en qué commit estabas antes, puedes revisar el historial de movimientos con:  
+```bash
+git reflog
+```
+Y para volver a una posición anterior reciente:  
+```bash
+git checkout HEAD@{N}
+```
+📌 **Ejemplo:**  
+```bash
+git checkout HEAD@{2}  # Regresa a donde estabas hace dos movimientos
+```
+
+> [!NOTE]  
+> Linus Torvalds no diseñó Git para ser fácil, sino **para ser poderoso**. Él mismo dijo que era una herramienta para gente inteligente. 🧠🔥  
+
+> [!IMPORTANT]  
+> Ahora piensa bien qué hace el siguiente comando y prepárate para recordarlo en el examen del profesorcito 😏:
+> ```bash
+> git checkout HEAD@{1}
+> ```  
+>
 
 &nbsp;&nbsp;&nbsp;[↩️](#tabla-de-contenido)
 
