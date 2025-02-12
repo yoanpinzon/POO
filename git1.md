@@ -86,7 +86,7 @@ En este curso de **Programación Orientada a Objetos (POO)** 🔥 con **C++** �
     - [**Conflictos en `git merge` 🌀**](#conflictos-en-git-merge-)
     - [**Conflictos en `git push` 🚀**](#conflictos-en-git-push-)
     - [**Conflictos en `git pull` ⬇️**](#conflictos-en-git-pull-️)
-7. [**Moviéndonos en el Historial de Git](#7-moviéndonos-en-el-historial-de-git)
+7. [**Moviéndonos en el Historial de Git**](#7-moviéndonos-en-el-historial-de-git)
 8. [**Prácticas**](#prácticas)  
     - [Práctica #1](#práctica-1-usando-git-init-️) Usando `git init` 🖥️
     - [Práctica #2 ](#práctica-2-usando-git-add-git-status-y-git-commit-)  Usando `git add`, `git status` y `git commit` 📝
