@@ -541,7 +541,7 @@ ostream &operator<<(ostream &os, const Producto &p) {
 ### **📝 Pasos para entregar tu código correctamente:** <!-- omit in toc -->
 
 ## 1️⃣ Aceptar la tarea  <!-- omit in toc -->
-1. **Accede al enlace de la tarea:** [https://classroom.github.com/a/sHyJsgJf](https://classroom.github.com/a/sHyJsgJf).
+1. **Accede al enlace de la tarea:** [https://classroom.github.com/a/9ovHgCtm](https://classroom.github.com/a/9ovHgCtm).
 2. **Haz clic en "Aceptar la tarea"** para que se genere un repositorio en GitHub automáticamente.
 3. Una vez aceptada, **se habrá creado un repositorio en GitHub** con la siguiente dirección (reemplaza `TU_USUARIO` con tu nombre de usuario en GitHub):  
    ```
