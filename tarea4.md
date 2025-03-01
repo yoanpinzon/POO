@@ -410,6 +410,7 @@ SALIR
 ## 📌 Diagrama de Clases 
 
 ```mermaid
+%%{init: {'theme': 'default', 'securityLevel': 'strict', 'zoom': false} }%%
 classDiagram
     class Producto {
         - string nombre
