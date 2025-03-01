@@ -152,7 +152,7 @@ classDiagram
         + void setSaldo(int valor)
         + void consignar(int v)
         + void retirar(int v)
-        + void transferir(Cuenta &destino, int cantidad)
+        + void transferir(...)
         + ostream &operator<<(ostream &os, const Cuenta &c)
     }
 ```
@@ -420,7 +420,7 @@ classDiagram
         + string getNombre()
         + int getCantidad()
         + int getPrecio()
-        + void vender(int c)
+        + void vender(...)
         + ostream &operator<<(ostream &os, const Producto &p)
     }
 ```
