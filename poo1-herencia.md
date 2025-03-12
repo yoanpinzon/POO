@@ -1,18 +1,129 @@
-# Herencia en C++
 
-## ¿Qué es la Herencia?
+---
+
+# 💻 300CIS017 Programación Orientada a Objetos 2025-01  <!-- omit in toc -->
+![Version](https://img.shields.io/badge/version-1.0-blue)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+# 🌟 Tema 3: POO - Parte 1 (Herencia) <!-- omit in toc -->
+
+---
+
+### 🎥 Videos que inspiraron este tema:
+
+<table style="border-collapse: collapse; width: 100%; border: none; margin: 10px 0;">
+  <tr>
+    <td style="text-align: center; padding: 5px; border: none;">
+      <a href="https://www.youtube.com/watch?v=92XVwY54h5k">
+        <img src="img/vid6.png" alt="Car Radio" width="150">
+      </a>
+      <br>
+      <span style="font-size: 12px; margin-top: 5px; display: inline-block;">Car Radio<br>TØP</span>
+    </td>
+    <td style="text-align: center; padding: 5px; border: none;">
+      <a href="https://www.youtube.com/watch?v=eJnQBXmZ7Ek">
+        <img src="img/vid7.png" alt="Chlorine" width="150">
+      </a>
+      <br>
+      <span style="font-size: 12px; margin-top: 5px; display: inline-block;">Chlorine<br>TØP</span>
+    </td>
+    <td style="text-align: center; padding: 5px; border: none;">
+      <a href="https://www.youtube.com/watch?v=UprcpdwuwCg">
+        <img src="img/vid8.png" alt="Heathens" width="150">
+      </a>
+      <br>
+      <span style="font-size: 12px; margin-top: 5px; display: inline-block;">Heathens<br>TØP</span>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 💻 Creado por   
+
+Profesorcito © 2025
+
+<!-- <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-trash" aria-label="The trash icon" role="img"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+
+<svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-pencil" aria-label="The pencil icon" role="img"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg>
+
+<svg aria-hidden="true" focusable="false" class="mt-1" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path></svg>
+
+<svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-repo" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+<svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-trash" aria-label="The trash icon" role="img"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+
+<svg aria-hidden="true" focusable="false" class="Octicon-sc-9kayk9-0 kfGkqo" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>
+ -->
+---
+
+### 🎶 Dedicado a 
+
+[Tyler Joseph y Josh Dun](https://en.wikipedia.org/wiki/Twenty_One_Pilots) (Tyler y Josh) 🎤
+
+
+--- 
+
+En este capítulo, habiendo explorado previamente la programación orientada a objetos en **C++** 💻, profundizaremos en el poderoso concepto de **herencia**. A lo largo de esta sección, aprenderemos a crear nuevas clases basadas en clases existentes, reutilizando y extendiendo funcionalidades de manera eficiente. Veremos cómo implementar clases base y derivadas, y cómo utilizar modificadores de acceso para controlar la visibilidad de atributos y métodos. Además, aprenderemos a modelar relaciones de herencia utilizando **diagramas UML**, comprendiendo su notación y significado. 🚀
+
+---
+
+### **Tabla de Contenido**
+
+- [1. **Introducción a la Herencia en C++**](#1-introducción-a-la-herencia-en-c)
+- [2. **Clases Base y Clases Derivadas**](#2-clases-base-y-clases-derivadas)
+  - [**Clase Base (o Superclase):**](#clase-base-o-superclase)
+  - [**Clase Derivada (o Subclase):**](#clase-derivada-o-subclase)
+  - [**Ejemplo 1** - Herencia entre ClaseA y ClaseB](#ejemplo-1---herencia-entre-clasea-y-claseb)
+- [3. **Modificadores de Acceso en C++**](#3-modificadores-de-acceso-en-c)
+- [4. **Tipos de Herencia**](#4-tipos-de-herencia)
+  - [Herencia Pública (`public`)](#herencia-pública-public)
+  - [Herencia Protegida (`protected`)](#herencia-protegida-protected)
+  - [Herencia Privada (`private`)](#herencia-privada-private)
+- [5. **Visibilidad de Atributos y Métodos en C++**](#5-visibilidad-de-atributos-y-métodos-en-c)
+- [6. **Modificación de Accesos Según la Herencia**](#6-modificación-de-accesos-según-la-herencia)
+  - [**Ejemplo 2** - Persona, Estudiante, Profesor](#ejemplo-2---persona-estudiante-profesor)
+    - [📌 1. **Clase `Persona`**](#-1-clase-persona)
+    - [📌 2. **Clase `Estudiante`**](#-2-clase-estudiante)
+    - [📌 3. **Clase `Profesor`**](#-3-clase-profesor)
+    - [📌 4. **Función `main()`**](#-4-función-main)
+    - [Diagrama UML](#diagrama-uml)
+  - [**Ejemplo 3** - Criaturas Mágicas](#ejemplo-3---criaturas-mágicas)
+    - [📌 1. **Clase `MagicalCreature` (Base)**](#-1-clase-magicalcreature-base)
+    - [📌 2. **Clase `Dragon` (Derivada de `MagicalCreature`)**](#-2-clase-dragon-derivada-de-magicalcreature)
+    - [📌 3. **Clase `Hada` (Derivada de `MagicalCreature`)**](#-3-clase-hada-derivada-de-magicalcreature)
+    - [📌 4. **Función `main()`**](#-4-función-main-1)
+    - [📌 5. **Revisualización tras Evolución:**](#-5-revisualización-tras-evolución)
+    - [📌 6. **Liberación de Memoria:**](#-6-liberación-de-memoria)
+    - [Diagrama UML](#diagrama-uml-1)
+  - [**Ejemplo 4** - Herencia Múltiple](#ejemplo-4---herencia-múltiple)
+    - [📌 1. **Clase `CuentaBasica`**](#-1-clase-cuentabasica)
+    - [📌 2. **Clase `Transaccionable` (Interfaz)**](#-2-clase-transaccionable-interfaz)
+    - [📌 3. **Clase `CuentaCorriente`**](#-3-clase-cuentacorriente)
+    - [📌 4. **Clase `CuentaAhorros`**](#-4-clase-cuentaahorros)
+    - [📌 5. **Clase `CuentaInversion`**](#-5-clase-cuentainversion)
+    - [📌 6. **Función `main()`**](#-6-función-main)
+    - [Diagrama UML](#diagrama-uml-2)
+
+---
+
+# Herencia en C++ <!-- omit in toc -->
+
+# 1. **Introducción a la Herencia en C++**
 
 La herencia es un mecanismo fundamental de la Programación Orientada a Objetos (POO) que permite crear nuevas clases a partir de clases existentes. Este proceso se realiza copiando características (atributos y métodos) de una clase base a una clase derivada. La principal ventaja de la herencia es la reutilización de código y la posibilidad de extender o modificar comportamientos sin alterar el código original.
 
-## Clases Base y Clases Derivadas  
+# 2. **Clases Base y Clases Derivadas**
 
-### 📌 **Clase Base (o Superclase):**  
+## **Clase Base (o Superclase):**  
 Es una clase que sirve como modelo para crear otras clases. Define atributos y métodos comunes que pueden ser reutilizados por otras clases para evitar repetir código.  
 
-### 📌 **Clase Derivada (o Subclase):**  
+## **Clase Derivada (o Subclase):**  
 Es una clase que se crea a partir de una clase base, heredando sus atributos y métodos. Además, puede agregar o modificar funcionalidades para adaptarse a necesidades específicas.  
 
-## 💡 ¿Cómo se define la herencia?  
+## 💡 ¿Cómo se define la herencia?  <!-- omit in toc -->
 
 En C++, la herencia se especifica utilizando el símbolo `:` seguido de un modificador de acceso (`public`, `protected` o `private`) y el nombre de la clase base. Ejemplo:
 
@@ -20,7 +131,10 @@ En C++, la herencia se especifica utilizando el símbolo `:` seguido de un modif
 class ClaseB : public ClaseA { ... };
 ```
 
-## Ejemplo
+## **Ejemplo 1** - Herencia entre ClaseA y ClaseB
+
+En este ejemplo, `ClaseB` hereda de `ClaseA`, accediendo a sus métodos públicos y utilizando un método para obtener el atributo privado `a`. Además, `ClaseB` agrega un nuevo atributo `b` y un método para mostrar ambos valores.
+
 
 ```cpp
 #include <iostream>
@@ -74,7 +188,7 @@ int main() {
 
 <details><summary>👨‍🏫 Explicación</summary>
 
-### 🔍 **Clases y Atributos:**  
+### 🔍 **Clases y Atributos:**  <!-- omit in toc --> 
 - **`ClaseA` (Clase Base):**  
   - **Atributo privado:** `int a;` — No accesible directamente fuera de la clase, reforzando el encapsulamiento.  
   - **Constructor:** Inicializa `a` con el valor pasado como argumento (`valorA`).  
@@ -83,7 +197,7 @@ int main() {
   
 ---
 
-- **`ClaseB` (Clase Derivada):**  
+- **`ClaseB` (Clase Derivada):**  <!-- omit in toc -->
   - Hereda de `ClaseA` mediante **herencia pública** (`public ClaseA`). Esto significa que `ClaseB` puede acceder a los métodos públicos de `ClaseA` pero no a sus atributos privados.  
   - **Atributo privado:** `int b;` — Exclusivo de `ClaseB` y no accesible fuera de la clase.  
   - **Constructor:** Inicializa `b` y también llama al constructor de `ClaseA` para inicializar `a` (mediante `ClaseA(valorA)`).  
@@ -91,7 +205,7 @@ int main() {
   
 ---
 
-### 🔍 **Función `main()`:**  
+### 🔍 **Función `main()`:**  <!-- omit in toc -->
 En la función `main()`, se crean dos objetos:  
 
 - `x` de tipo `ClaseA`, inicializado con `a = 10`.  
@@ -105,9 +219,70 @@ Llamadas a métodos:
 
 </details>
 
-## Tipos de Herencia 
+Aquí tienes el texto modificado con la explicación sobre las siglas de UML y la relación de la flecha vacía:
 
-### ✅ **1. Herencia Pública (`public`)**  
+---
+
+## **Diagrama de Clases (UML)** <!-- omit in toc -->
+
+UML, que significa **Unified Modeling Language** (Lenguaje de Modelado Unificado), es un estándar visual ampliamente utilizado en la ingeniería de software para representar la estructura de un sistema mediante diagramas. UML permite describir las relaciones y comportamientos de los componentes de un sistema de forma gráfica, facilitando su comprensión y comunicación entre los desarrolladores y otros interesados.
+
+En particular, el **Diagrama de Clases** es uno de los diagramas más importantes de UML. Este diagrama muestra cómo las clases están relacionadas entre sí, qué atributos y métodos tienen, y cómo interactúan.
+
+A continuación, se presenta un diagrama UML que muestra la relación de herencia entre `ClaseA` y `ClaseB`, del ejemplo anterior. De ahora en adelante, utilizaremos diagramas UML para modelar nuestros desarrollos.
+
+```mermaid
+classDiagram
+    ClaseA <|-- ClaseB
+    ClaseA : -int a
+    ClaseA : +ClaseA(int valorA)
+    ClaseA : +void mostrar1()
+    ClaseA : +int getA() const
+    ClaseB : -int b
+    ClaseB : +ClaseB(int valorA, int valorB)
+    ClaseB : +void mostrar2()
+```
+
+### Explicación del Diagrama <!-- omit in toc -->
+
+En este diagrama, la **flecha vacía** entre `ClaseA` y `ClaseB` indica una relación de **herencia**. Específicamente, muestra que **`ClaseB` hereda de `ClaseA`**, lo que significa que `ClaseB` puede acceder a los métodos públicos de `ClaseA` (como `mostrar1()` y `getA()`), pero no a sus atributos privados.
+
+Es importante notar el uso de los signos `+` y `-` en el diagrama:  
+- El signo `+` delante de un atributo o método indica que es **público** y, por lo tanto, accesible desde fuera de la clase.  
+- El signo `-` delante de un atributo indica que es **privado**, lo que significa que no es accesible directamente desde fuera de la clase. En este caso, el atributo `a` en `ClaseA` está marcado con un `-`, lo que significa que no se puede acceder a él directamente desde `ClaseB`, sino que debe hacerse a través de métodos públicos como `getA()`. Esto asegura el **encapsulamiento**, protegiendo la integridad de los datos de la clase base.
+
+Además, el diagrama muestra que `ClaseA` tiene un atributo privado `a` y un constructor que recibe un valor para inicializarlo. La clase `ClaseB` también tiene su propio atributo privado `b` y un método `mostrar2()` que permite visualizar ambos atributos. Para acceder al valor de `a` desde `ClaseB`, se utiliza el método público `getA()` de la clase base.
+
+Este tipo de diagramas facilita la visualización de las relaciones entre clases, permitiendo comprender de manera clara y rápida cómo se organiza la estructura del código y cómo interactúan los diferentes componentes.
+
+---
+
+# 3. **Modificadores de Acceso en C++**
+
+Hasta ahora, hemos trabajado con dos modificadores de acceso principales en nuestras clases:
+
+- **`public`**: Todo lo que está aquí es accesible desde fuera de la clase.  
+- **`private`**: Todo lo que está aquí es inaccesible desde fuera de la clase, lo que permite ocultar los detalles internos y restringir el acceso solo dentro de la clase.
+
+Ahora, al adentrarnos en el mundo de la herencia, necesitamos un nuevo nivel de acceso:
+
+- **`protected`**: Aunque es inaccesible desde fuera de la clase, **puede ser accedido por clases derivadas**. Esto permite compartir información con subclases sin comprometer la encapsulación total.
+
+> [!NOTE]
+> ¿Por qué Bjarne Stroustrup le puso el nombre de protected? Cuando Bjarne Stroustrup diseñó C++, necesitaba un mecanismo que permitiera a las clases derivadas heredar ciertos atributos o métodos de su clase base **sin exponerlos completamente al mundo exterior**. El modificador `protected` refleja precisamente esta intención: proteger ciertos elementos de ser accesibles libremente desde fuera de la clase, pero permitiendo que las clases derivadas puedan utilizarlos. De esta manera, se garantiza la **encapsulación** al mismo tiempo que se facilita la herencia, permitiendo que las subclases extiendan o modifiquen el comportamiento de la clase base sin comprometer su seguridad.
+>
+
+---
+
+## En resumen: <!-- omit in toc -->
+
+- **public:** Accesible por todos.
+- **private:** Accesible solo por la misma clase.
+- **protected:** Accesible por la misma clase y sus clases derivadas.
+
+# 4. **Tipos de Herencia**
+
+## Herencia Pública (`public`)
 Los miembros **públicos** y **protegidos** son accesibles en la clase derivada, pero **no los privados**.  
 
 ```cpp
@@ -156,7 +331,8 @@ y: 20
 
 ---
 
-### 🔒 **2. Herencia Protegida (`protected`)**  
+## Herencia Protegida (`protected`) 
+
 Los miembros **públicos** y **protegidos** de la clase base se convierten en **protegidos** en la clase derivada. Los privados siguen inaccesibles.  
 
 ```cpp
@@ -206,7 +382,7 @@ y: 20
 
 ---
 
-### ❌ **3. Herencia Privada (`private`)**  
+## Herencia Privada (`private`)
 Todos los miembros de la clase base (públicos y protegidos) se convierten en **privados** en la clase derivada. Los privados originales de la base siguen inaccesibles.  
 
 ```cpp
@@ -253,9 +429,10 @@ x: 10
 y: 20
 ```
 
-## Resumen
+# 5. **Visibilidad de Atributos y Métodos en C++**
 
-### Visibilidad de Atributos y Métodos en C++
+En C++, la visibilidad de atributos y métodos se controla mediante modificadores de acceso (`public`, `protected` y `private`). Estos modificadores determinan qué partes del programa pueden acceder a miembros específicos de una clase. A continuación se muestra cómo funciona cada uno:  
+
 
 | Tipo de acceso | Desde la misma clase | Desde clases derivadas | Desde fuera (main, otros objetos, etc.) |
 |----------------|---------------------|-----------------------|---------------------------------------|
@@ -263,8 +440,19 @@ y: 20
 | `protected`    | ✅ Sí               | ✅ Sí                 | ❌ No                                 |
 | `private`      | ✅ Sí               | ❌ No                 | ❌ No                                 |
 
+- **`public`**: Los miembros declarados como `public` son accesibles desde cualquier parte del código, incluidas las clases derivadas y funciones externas.  
+- **`protected`**: Los miembros `protected` son accesibles desde la misma clase y sus clases derivadas, pero no desde fuera de la jerarquía de herencia.  
+- **`private`**: Los miembros `private` solo pueden ser accedidos desde la propia clase donde se declararon, sin acceso directo desde clases derivadas ni funciones externas.  
 
-### Modificación de Accesos Según el Tipo de Herencia
+> [!IMPORTANT]
+> 
+> Estos modificadores son esenciales para garantizar la encapsulación y el control de acceso adecuado en programas orientados a objetos.
+>
+
+# 6. **Modificación de Accesos Según la Herencia**
+
+En C++, el tipo de herencia que se utiliza (`public`, `protected` o `private`) afecta directamente la visibilidad de los miembros heredados de una clase base en la clase derivada. Este mecanismo es fundamental para controlar el acceso y la protección de datos en la programación orientada a objetos.  
+
 
 | Tipo de acceso en la clase base | Herencia Pública (`: public`) | Herencia Protegida (`: protected`) | Herencia Privada (`: private`) |
 |---------------------------------|------------------------------|-----------------------------------|--------------------------------|
@@ -272,329 +460,24 @@ y: 20
 | `protected`                     | 🔒 Sigue siendo `protected`   | 🔒 Sigue siendo `protected`        | 🔒 Se convierte en `private`    |
 | `private`                       | 🔐 Sigue siendo `private`     | 🔐 Sigue siendo `private`          | 🔐 Sigue siendo `private`       |
 
----
+#### 🔍 **Explicación Detallada:**  <!-- omit in toc --> 
+- **Herencia Pública (`: public`)**:  
+  Los miembros `public` de la clase base permanecen `public` en la clase derivada. Los miembros `protected` se heredan como `protected`. Los miembros `private` no se heredan directamente, aunque pueden ser accesibles mediante funciones `public` o `protected` de la clase base.  
 
-### 📌 **Conceptos demostrados:**  
-- En herencia pública, `x` sigue siendo accesible directamente desde el `main()`, mientras que `y` no.  
-- En herencia protegida, tanto `x` como `y` se vuelven inaccesibles desde `main()`, pero son accesibles desde la clase derivada.  
-- En herencia privada, `x` y `y` se convierten en privados en la clase derivada y no pueden ser accedidos desde `main()`.  
+- **Herencia Protegida (`: protected`)**:  
+  Los miembros `public` de la clase base se convierten en `protected` en la clase derivada. Los miembros `protected` se mantienen `protected`, mientras que los `private` no se heredan. Esto limita el acceso a los miembros heredados, permitiendo que solo las clases derivadas tengan acceso a ellos.  
 
----
+- **Herencia Privada (`: private`)**:  
+  Todos los miembros heredados (`public` y `protected`) se convierten en `private` dentro de la clase derivada. Los miembros `private` de la clase base no se heredan. Este tipo de herencia se utiliza principalmente para implementar composición o para ocultar completamente la interfaz pública de la clase base.  
 
-
-### 🔍 **Concepto Básico: Herencia en C++**
-En C++, una clase puede **heredar de otra clase** para **reutilizar atributos y métodos**. La herencia puede ser de tres tipos:
-
-1. **Herencia Pública (`public`)** - Los miembros públicos y protegidos de la clase base mantienen su visibilidad en la clase derivada.
-2. **Herencia Protegida (`protected`)** - Los miembros públicos y protegidos de la clase base se vuelven `protected` en la clase derivada.
-3. **Herencia Privada (`private`)** - Todos los miembros de la clase base se vuelven `private` en la clase derivada.
+> [!IMPORTANT]
+> 
+> Este control de accesos permite definir claramente qué se puede heredar y cómo debe ser accedido desde clases derivadas, asegurando así la encapsulación adecuada.
+>
 
 ---
 
-### 💡 **Ejemplo de Clases (C++ Código)**
-
-```cpp
-#include <iostream>
-#include <string>
-using namespace std;
-
-// Clase base
-class Animal {
-protected:  // Visible para clases derivadas
-    string nombre;
-
-public:
-    Animal(string n) : nombre(n) {}
-
-    void mostrarNombre() const {
-        cout << "Nombre del animal: " << nombre << endl;
-    }
-};
-
-// Clase derivada con herencia pública
-class Perro : public Animal {
-public:
-    Perro(string n) : Animal(n) {}
-
-    void hacerSonido() const {
-        cout << nombre << " dice: ¡Guau guau!" << endl;
-    }
-};
-
-// Clase derivada con herencia protegida
-class Gato : protected Animal {
-public:
-    Gato(string n) : Animal(n) {}
-
-    void hacerSonido() const {
-        cout << nombre << " dice: ¡Miau miau!" << endl;
-    }
-};
-
-// Clase derivada con herencia privada
-class Loro : private Animal {
-public:
-    Loro(string n) : Animal(n) {}
-
-    void hablar() const {
-        cout << nombre << " dice: ¡Hola humano!" << endl;
-    }
-};
-
-int main() {
-    Perro miPerro("Firulais");
-    miPerro.mostrarNombre(); // Accesible porque la herencia es pública
-    miPerro.hacerSonido();
-
-    Gato miGato("Michi");
-    // miGato.mostrarNombre();  <-- No permitido, la herencia es protegida
-    miGato.hacerSonido();
-
-    Loro miLoro("Polly");
-    // miLoro.mostrarNombre();  <-- No permitido, la herencia es privada
-    miLoro.hablar();
-
-    return 0;
-}
-```
-
----
-
-### 📌 **Explicación:**
-1. **Herencia Pública (`Perro`)**: Hereda todo tal cual. Los métodos `public` y `protected` de `Animal` siguen siendo accesibles.
-2. **Herencia Protegida (`Gato`)**: Los métodos `public` y `protected` de `Animal` se convierten en `protected` en `Gato`.
-3. **Herencia Privada (`Loro`)**: Todo lo heredado se convierte en `private` dentro de `Loro`.
-
----
-
-### 🎨 **Diagrama UML en Mermaid**
-Vamos a dibujar cómo se relacionan estas clases usando Mermaid.
-
-```mermaid
-classDiagram
-    class Animal {
-        -string nombre
-        +Animal(string n)
-        +mostrarNombre() const
-    }
-    
-    class Perro {
-        +Perro(string n)
-        +hacerSonido() const
-    }
-    
-    class Gato {
-        +Gato(string n)
-        +hacerSonido() const
-    }
-    
-    class Loro {
-        +Loro(string n)
-        +hablar() const
-    }
-
-    Animal <|-- Perro : public
-    Animal <|-- Gato : protected
-    Animal <|-- Loro : private
-```
-
----
-
-¿Te gustaría que convierta este ejemplo en algo más interactivo o que lo lleve a un proyecto más completo? 🚀😊
-
-¡Exactamente! 😄 En **Mermaid**, la sintaxis estándar para herencia es simplemente:
-
-```mermaid
-Animal <|-- Perro
-```
-
-Esto indica que `Perro` hereda de `Animal`, **pero no especifica si la herencia es pública, protegida o privada**. Es algo que Mermaid no maneja por defecto.
-
----
-
-### 📌 **¿Cómo podríamos indicarlo?**
-Podemos usar **etiquetas de texto o anotaciones manuales** para simularlo. Algo así:
-
-```mermaid
-classDiagram
-    class Animal {
-        -string nombre
-        +Animal(string n)
-        +mostrarNombre() const
-    }
-    
-    class Perro {
-        +Perro(string n)
-        +hacerSonido() const
-    }
-    
-    class Gato {
-        +Gato(string n)
-        +hacerSonido() const
-    }
-    
-    class Loro {
-        +Loro(string n)
-        +hablar() const
-    }
-
-    Animal <|-- Perro : <public>
-    Animal <|-- Gato : <protected>
-    Animal <|-- Loro : <private>
-```
-
----
-
-### 🔍 **Explicación:**
-- Le agregué etiquetas `<<public>>`, `<<protected>>`, `<<private>>` a cada relación para indicar el tipo de herencia.
-- **Esto es solo un truco visual**. Mermaid realmente no entiende la diferencia, pero nosotros sí. 😉
-
----
-
-¡Me encanta la idea! 😄 Vamos a hacer un ejemplo con **herencia múltiple y en varios niveles** para que se entienda cómo funciona. Esto es más complejo pero súper interesante. 🚀
-
----
-
-## 📌 **Ejemplo: Sistema de Vehículos (Herencia en Múltiples Niveles)**
-
-### 🔍 **Contexto:**  
-Queremos modelar un sistema de vehículos con las siguientes clases:  
-- `Vehiculo`: Clase base general que define características básicas de cualquier vehículo.  
-- `VehiculoMotorizado`: Clase derivada que hereda de `Vehiculo` y añade características específicas de vehículos con motor.  
-- `Auto`: Clase derivada de `VehiculoMotorizado` que agrega características únicas de los autos.  
-- `Motocicleta`: Clase derivada de `VehiculoMotorizado` que agrega características únicas de las motocicletas.  
-
----
-
-### 📚 **Código C++ con Herencia en Múltiples Niveles**
-```cpp
-#include <iostream>
-#include <string>
-using namespace std;
-
-// Clase base: Vehiculo
-class Vehiculo {
-protected:
-    string marca;
-
-public:
-    Vehiculo(string m) : marca(m) {}
-
-    void mostrarMarca() const {
-        cout << "Marca: " << marca << endl;
-    }
-};
-
-// Clase derivada: VehiculoMotorizado (herencia pública)
-class VehiculoMotorizado : public Vehiculo {
-protected:
-    int cilindrada;
-
-public:
-    VehiculoMotorizado(string m, int c) : Vehiculo(m), cilindrada(c) {}
-
-    void mostrarCilindrada() const {
-        cout << "Cilindrada: " << cilindrada << " cc" << endl;
-    }
-};
-
-// Clase derivada: Auto (herencia pública de VehiculoMotorizado)
-class Auto : public VehiculoMotorizado {
-private:
-    int puertas;
-
-public:
-    Auto(string m, int c, int p) : VehiculoMotorizado(m, c), puertas(p) {}
-
-    void mostrarDetalles() const {
-        mostrarMarca();
-        mostrarCilindrada();
-        cout << "Puertas: " << puertas << endl;
-    }
-};
-
-// Clase derivada: Motocicleta (herencia pública de VehiculoMotorizado)
-class Motocicleta : public VehiculoMotorizado {
-private:
-    bool tieneSidecar;
-
-public:
-    Motocicleta(string m, int c, bool sidecar) : VehiculoMotorizado(m, c), tieneSidecar(sidecar) {}
-
-    void mostrarDetalles() const {
-        mostrarMarca();
-        mostrarCilindrada();
-        cout << "Tiene Sidecar: " << (tieneSidecar ? "Sí" : "No") << endl;
-    }
-};
-
-int main() {
-    Auto miAuto("Toyota", 1800, 4);
-    miAuto.mostrarDetalles();
-
-    Motocicleta miMoto("Harley-Davidson", 1200, true);
-    miMoto.mostrarDetalles();
-
-    return 0;
-}
-```
-
----
-
-### 🔑 **Explicación:**
-1. 📂 `Vehiculo` es la clase base de todo vehículo.
-2. 🔋 `VehiculoMotorizado` extiende `Vehiculo` añadiendo `cilindrada` (algo que solo aplica a vehículos con motor).
-3. 🚗 `Auto` hereda de `VehiculoMotorizado` añadiendo `puertas`.
-4. 🏍️ `Motocicleta` hereda de `VehiculoMotorizado` añadiendo `tieneSidecar`.
-
----
-
-### 🎨 **Mermaid UML Diagrama (Herencia Múltiple y Niveles)**  
-```mermaid
-classDiagram
-    class Vehiculo {
-        -string marca
-        +Vehiculo(string m)
-        +mostrarMarca() const
-    }
-    
-    class VehiculoMotorizado {
-        -int cilindrada
-        +VehiculoMotorizado(string m, int c)
-        +mostrarCilindrada() const
-    }
-    
-    class Auto {
-        -int puertas
-        +Auto(string m, int c, int p)
-        +mostrarDetalles() const
-    }
-    
-    class Motocicleta {
-        -bool tieneSidecar
-        +Motocicleta(string m, int c, bool sidecar)
-        +mostrarDetalles() const
-    }
-
-    Vehiculo <|-- VehiculoMotorizado : public
-    VehiculoMotorizado <|-- Auto : public
-    VehiculoMotorizado <|-- Motocicleta : public
-```
-
----
-
-### 💡 **¿Por qué tiene sentido?**
-- Este modelo permite que `VehiculoMotorizado` actúe como un **puente** entre `Vehiculo` y los tipos específicos como `Auto` y `Motocicleta`.  
-- La herencia pública garantiza que cada nivel pueda aprovechar completamente los métodos de sus ancestros.
-
----
-
-¿Te ayudo a hacer esto aún más interesante agregando **herencia protegida o privada en algún nivel intermedio** para que se vea más realista? 😄🚀 Y también podemos mejorarlo en el diagrama UML. 💪
-### Notación UML para Herencia
-
-En un diagrama UML, la herencia se representa con una flecha vacía apuntando de la clase derivada hacia la clase base.
-
-## Ejemplo 1
+## **Ejemplo 2** - Persona, Estudiante, Profesor
 
 A continuación, crearemos un programa que define una clase base llamada `Persona` y dos clases derivadas, `Estudiante` y `Profesor`, que heredan de `Persona`. Este ejemplo demostrará cómo las clases derivadas pueden extender y modificar el comportamiento de la clase base, así como la utilización de getters y setters para acceder y modificar atributos privados.
 
@@ -693,7 +576,7 @@ int main() {
 }
 ```
 
-### Explicación
+### Explicación <!-- omit in toc -->
 
 Este programa define un sistema básico para manejar información sobre **Personas**, **Estudiantes** y **Profesores**. Los datos se almacenan en un vector (`listaPersonas`) y se muestran o modifican usando métodos específicos de cada clase. A continuación, se explican los componentes principales del código:
 
@@ -856,7 +739,23 @@ classDiagram
     Persona <|-- Profesor : hereda
 ```
 
-## Ejemplo 2
+---
+
+### Explicación del Diagrama <!-- omit in toc -->  
+
+En este diagrama, las **flechas vacías** entre `Persona` y las clases `Estudiante` y `Profesor` indican una relación de **herencia pública**. Específicamente, muestra que **`Estudiante` y `Profesor` heredan de `Persona`**, lo que significa que ambas clases pueden acceder a los métodos públicos de `Persona` (`getNombre()`, `getId()`, `setNombre()`, `setId()`, `mostrarInformacion()`), pero no a sus atributos privados (`nombre`, `id`).  
+
+Es importante notar el uso de los signos `+` y `-` en el diagrama:  
+- El signo `+` delante de un atributo o método indica que es **público** y, por lo tanto, accesible desde fuera de la clase.  
+- El signo `-` delante de un atributo indica que es **privado**, lo que significa que no es accesible directamente desde fuera de la clase.  
+
+En este caso, el atributo `nombre` y `id` en `Persona` están marcados con un `-`, lo que significa que no se puede acceder a ellos directamente desde `Estudiante` o `Profesor`, sino que debe hacerse a través de métodos públicos como `getNombre()` o `getId()`. Esto asegura el **encapsulamiento**, protegiendo la integridad de los datos de la clase base.  
+
+Además, el diagrama muestra que `Persona` tiene un destructor virtual (`~Persona()`), lo cual es importante para que la eliminación de objetos derivados (`Estudiante`, `Profesor`) se realice correctamente.  
+
+---
+
+## **Ejemplo 3** - Criaturas Mágicas
 
 En este ejemplo, exploraremos el concepto de atributos `protected` en la herencia de clases en C++. Crearemos una clase base llamada `CriaturaMagica` y dos clases derivadas, `Dragon` y `Hada`, que heredarán de `CriaturaMagica`. Veremos cómo los atributos `protected` permiten a las clases derivadas acceder directamente a los atributos de la clase base, facilitando la implementación de comportamientos específicos para cada tipo de criatura. Este ejemplo demostrará la importancia de `protected` para lograr un equilibrio entre encapsulación y acceso controlado en la herencia.
 
@@ -1016,7 +915,7 @@ int main() {
 }
 ```
 
-### Explicación
+### Explicación <!-- omit in toc -->
 
 Este programa implementa un sistema para manejar **Criaturas Mágicas** con características específicas y la capacidad de evolucionar bajo ciertas condiciones. Utiliza **herencia, polimorfismo y STL (`vector` y `map`)** para almacenar y gestionar estas criaturas. A continuación, se explican los componentes principales del código:
 
@@ -1050,7 +949,7 @@ Esta clase define la estructura base de cualquier criatura mágica.
 
 ---
 
-### 📌 2. **Clase `Dragon` (Derivada de `MagicalCreature`)
+### 📌 2. **Clase `Dragon` (Derivada de `MagicalCreature`)**
 
 Esta clase define un tipo específico de criatura mágica: **Dragones**.
 
@@ -1068,7 +967,7 @@ Esta clase define un tipo específico de criatura mágica: **Dragones**.
 
 ---
 
-### 📌 3. **Clase `Hada` (Derivada de `MagicalCreature`)
+### 📌 3. **Clase `Hada` (Derivada de `MagicalCreature`)**
 
 Esta clase define otro tipo de criatura mágica: **Hadas**.
 
@@ -1099,7 +998,7 @@ La función principal se encarga de:
 
 ---
 
-### 💡 **¿Cómo funciona el uso del `map`?**
+### 💡 **¿Cómo funciona el uso del `map`?**  <!-- omit in toc -->
 
 El `map<int, vector<MagicalCreature*>> creatureMapByLevel;` se utiliza para **agrupar criaturas mágicas por su nivel**. Vamos a descomponer su funcionamiento:
 
@@ -1152,16 +1051,7 @@ Se asegura la liberación de la memoria para cada objeto creado dinámicamente c
 
 ---
 
-### 📌 **Mejoras Posibles:**
-
-- Implementar un sistema de almacenamiento persistente para conservar las criaturas entre ejecuciones.
-- Añadir más tipos de criaturas con comportamientos únicos.
-- Integrar un menú interactivo para gestionar criaturas dinámicamente durante la ejecución del programa.
-
----
-
 ### Diagrama UML
-
 
 ```mermaid
 classDiagram
@@ -1194,59 +1084,266 @@ classDiagram
     MagicalCreature <|-- Hada  : hereda
 ```
 
+### Explicación del Diagrama <!-- omit in toc -->  
+
+En este diagrama, las **flechas vacías** entre `MagicalCreature` y las clases `Dragon` y `Hada` indican una relación de **herencia pública**. Específicamente, muestra que **`Dragon` y `Hada` heredan de `MagicalCreature`**, lo que significa que ambas clases pueden acceder a los métodos públicos de `MagicalCreature` (`getName()`, `getLevel()`, `setName()`, `setLevel()`, `displayInfo()`), pero no a sus atributos privados (`name`, `level`) ni al protegido (`specialEnergy`).  
+
+Es importante notar el uso de los signos `+`, `-` y `#` en el diagrama:  
+- El signo `+` indica que un método es **público** y accesible desde fuera de la clase.  
+- El signo `-` indica que un atributo es **privado**, por lo que no es accesible directamente desde clases derivadas.  
+- El signo `#` indica que un atributo es **protegido**, lo cual permite el acceso desde clases derivadas pero no desde fuera.  
+
+El uso de un método puro virtual (`evolve() = 0`) en `MagicalCreature` convierte a esta clase en una **clase abstracta**, lo que significa que no se puede instanciar directamente. Las clases derivadas (`Dragon` y `Hada`) deben implementar (`override`) el método `evolve()` con su propia lógica.  
+
+Finalmente, el destructor virtual (`~MagicalCreature()`) garantiza que la eliminación de objetos derivados (`Dragon`, `Hada`) se realice correctamente y se libere la memoria adecuadamente.
+
+## **Ejemplo 4** - Herencia Múltiple
+
+En este ejemplo, vamos a aplicar **herencia múltiple con accesos diferentes** para simular un sistema bancario que maneja distintos tipos de cuentas. Tendremos dos clases base: `CuentaBasica` y `Transaccionable`, y tres clases derivadas: `CuentaCorriente`, `CuentaAhorros` y `CuentaInversion`.
 
 ```cpp
-
-
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
 
-class Figura {
+// Clase base CuentaBasica
+class CuentaBasica {
+protected: // Acceso protegido
+    string nombre;
+    int saldo;
+
 public:
-    virtual void dibujar() const = 0; // Método puro virtual (Clase Abstracta)
+    CuentaBasica(const string& nombre, int saldo) : nombre(nombre), saldo(saldo) {}
+
+    string getNombre() const { return nombre; }
+    int getSaldo() const { return saldo; }
+    void mostrarSaldo() const { cout << nombre << " tiene un saldo de: " << saldo << endl; }
 };
 
-class Circulo : public Figura {
+// Clase base Transaccionable
+class Transaccionable {
 public:
-    void dibujar() const override {
-        cout << "Dibujando un círculo." << endl;
+    virtual void consignar(int cantidad) = 0;
+    virtual void retirar(int cantidad) = 0;
+    virtual ~Transaccionable() {}
+};
+
+// Clase derivada CuentaCorriente
+class CuentaCorriente : public CuentaBasica, public Transaccionable {
+public:
+    CuentaCorriente(const string& nombre, int saldo) : CuentaBasica(nombre, saldo) {}
+
+    void consignar(int cantidad) override { saldo += cantidad; }
+
+    void retirar(int cantidad) override {
+        if (saldo >= cantidad) saldo -= cantidad;
+        else cout << "Fondos insuficientes" << endl;
     }
 };
 
-class Rectangulo : public Figura {
+// Clase derivada CuentaAhorros
+class CuentaAhorros : public CuentaBasica, public Transaccionable {
 public:
-    void dibujar() const override {
-        cout << "Dibujando un rectángulo." << endl;
+    CuentaAhorros(const string& nombre, int saldo) : CuentaBasica(nombre, saldo) {}
+
+    void consignar(int cantidad) override { saldo += cantidad; }
+
+    void retirar(int cantidad) override {
+        if (saldo >= cantidad) saldo -= cantidad;
+        else cout << "Fondos insuficientes" << endl;
     }
+};
+
+// Clase derivada CuentaInversion
+class CuentaInversion : private CuentaBasica, public Transaccionable {
+public:
+    CuentaInversion(const string& nombre, int saldo) : CuentaBasica(nombre, saldo) {}
+
+    void consignar(int cantidad) override { saldo += cantidad; }
+
+    void retirar(int cantidad) override {
+        if (saldo >= cantidad) saldo -= cantidad;
+        else cout << "Fondos insuficientes" << endl;
+    }
+
+    void mostrarSaldo() const { CuentaBasica::mostrarSaldo(); } // Acceso privado, se debe usar esta función para acceder
 };
 
 int main() {
-    vector<Figura*> figuras;
-    figuras.push_back(new Circulo());
-    figuras.push_back(new Rectangulo());
+    CuentaCorriente cc("Carlos", 1000);
+    CuentaAhorros ca("Ana", 2000);
+    CuentaInversion ci("Inversionista1", 5000);
 
-    for (Figura* figura : figuras) {
-        figura->dibujar();
-    }
+    cc.consignar(500);
+    cc.retirar(300);
+    cc.mostrarSaldo();
 
-    for (Figura* figura : figuras) {
-        delete figura;
-    }
+    ca.consignar(1000);
+    ca.retirar(500);
+    ca.mostrarSaldo();
+
+    ci.consignar(2000);
+    ci.retirar(1000);
+    ci.mostrarSaldo();
 
     return 0;
 }
 ```
 
-### Explicación
+---
 
-En este ejemplo, `Figura` es una **clase abstracta** que define un método virtual puro `dibujar()`. Las clases `Circulo` y `Rectangulo` heredan de `Figura` e implementan `dibujar()` de manera distinta.  
-Además, utilizamos un `vector` para almacenar punteros a `Figura`, lo que permite manejar múltiples objetos de clases derivadas de forma polimórfica.
+### Explicación <!-- omit in toc -->  
 
-## Conclusión
+Este programa implementa un sistema de cuentas bancarias utilizando **herencia múltiple y acceso protegido (`protected`)**. También se muestra cómo la herencia privada puede restringir el acceso a ciertas funciones y atributos. A continuación, se explican los componentes principales del código:  
 
-La herencia en C++ permite la reutilización de código y facilita el desarrollo de aplicaciones más estructuradas y fáciles de mantener. La combinación de herencia con estructuras de la STL como `vector` permite implementar patrones de diseño útiles para la creación de aplicaciones más complejas.
+---
 
-¿Te gustaría que continúe desarrollando este documento con diagramas UML y un enfoque aún más detallado para que sea un recurso completo para tus estudiantes?
+### 📌 1. **Clase `CuentaBasica`**  
+La clase `CuentaBasica` actúa como una clase base que define atributos y métodos comunes para todas las cuentas.  
+
+- **Atributos protegidos (`protected`):**  
+  - `nombre`: Nombre del titular de la cuenta.  
+  - `saldo`: Cantidad de dinero disponible en la cuenta.  
+
+- **Constructor:**  
+  Permite inicializar `nombre` y `saldo` al crear un objeto de tipo `CuentaBasica`.  
+
+- **Métodos públicos:**  
+  - `getNombre()`: Devuelve el nombre del titular.  
+  - `getSaldo()`: Devuelve el saldo actual.  
+  - `mostrarSaldo()`: Muestra el saldo disponible.  
+
+---
+
+### 📌 2. **Clase `Transaccionable` (Interfaz)**  
+Esta clase actúa como una **interfaz pura** que define operaciones esenciales para cualquier cuenta que permita transacciones.  
+
+- **Métodos virtuales puros:**  
+  - `consignar(int cantidad)`: Deposita una cantidad en la cuenta.  
+  - `retirar(int cantidad)`: Retira una cantidad de la cuenta.  
+  - **Destructor virtual:** Garantiza la correcta eliminación de objetos derivados.  
+
+---
+
+### 📌 3. **Clase `CuentaCorriente`**  
+La clase `CuentaCorriente` hereda de `CuentaBasica` y de `Transaccionable`.  
+
+- **Herencia pública:**  
+  Permite acceder a los métodos protegidos (`nombre`, `saldo`) y redefinir los métodos `consignar()` y `retirar()`.  
+
+- **Implementaciones de métodos:**  
+  - `consignar()`: Aumenta el saldo según la cantidad especificada.  
+  - `retirar()`: Disminuye el saldo si hay fondos suficientes, de lo contrario, muestra un mensaje de error.  
+  - `mostrarSaldo()`: Se hereda directamente de `CuentaBasica`.  
+
+---
+
+### 📌 4. **Clase `CuentaAhorros`**  
+La clase `CuentaAhorros` también hereda de `CuentaBasica` y de `Transaccionable`.  
+
+- **Herencia pública:**  
+  Permite implementar los métodos `consignar()` y `retirar()` con la misma lógica que `CuentaCorriente`.  
+
+- **Implementaciones de métodos:**  
+  - `consignar()`: Aumenta el saldo con la cantidad especificada.  
+  - `retirar()`: Disminuye el saldo si es posible; de lo contrario, muestra un mensaje de error.  
+
+---
+
+### 📌 5. **Clase `CuentaInversion`**  
+Esta clase hereda de `CuentaBasica` de manera **privada** y de `Transaccionable` de manera **pública**.  
+
+- **Herencia privada (`private`):**  
+  Los atributos `nombre` y `saldo` solo son accesibles a través de métodos públicos que expone `CuentaInversion`.  
+  Esto asegura un control estricto sobre cómo se accede a la información de la cuenta.  
+
+- **Implementaciones de métodos:**  
+  - `consignar()`: Aumenta el saldo de la cuenta.  
+  - `retirar()`: Disminuye el saldo si es suficiente.  
+  - `mostrarSaldo()`: Método propio que utiliza `CuentaBasica::mostrarSaldo()` para mostrar el saldo, pues la herencia es privada.  
+
+---
+
+### 📌 6. **Función `main()`**  
+El código principal muestra cómo se crean y manipulan objetos de las clases derivadas.  
+
+1. **Creación de objetos:**  
+   ```cpp
+   CuentaCorriente cc("Carlos", 1000);
+   CuentaAhorros ca("Ana", 2000);
+   CuentaInversion ci("Inversionista1", 5000);
+   ```
+   Cada uno se inicializa con un nombre y un saldo.  
+
+2. **Operaciones de transacción:**  
+   - `consignar()`: Se incrementa el saldo en función de la cantidad especificada.  
+   - `retirar()`: Se intenta reducir el saldo. Si no hay suficiente dinero, se muestra un mensaje de error.  
+
+3. **Mostrar el saldo:**  
+   Cada clase tiene su forma de mostrar el saldo, especialmente `CuentaInversion`, que utiliza su método propio para acceder al saldo de la clase base.  
+
+---
+
+### Diagrama UML
+
+```mermaid
+classDiagram
+    
+    class CuentaBasica {
+        -string nombre
+        -int saldo
+        +CuentaBasica(string nombre, int saldo)
+        +string getNombre()
+        +int getSaldo()
+        +void mostrarSaldo()
+    }
+
+    class Transaccionable {
+        <<interface>>
+        +void consignar(int cantidad)
+        +void retirar(int cantidad)
+    }
+
+    class CuentaCorriente {
+        +CuentaCorriente(string nombre, int saldo)
+        +void consignar(int cantidad)
+        +void retirar(int cantidad)
+    }
+
+    class CuentaAhorros {
+        +CuentaAhorros(string nombre, int saldo)
+        +void consignar(int cantidad)
+        +void retirar(int cantidad)
+    }
+
+    class CuentaInversion {
+        +CuentaInversion(string nombre, int saldo)
+        +void consignar(int cantidad)
+        +void retirar(int cantidad)
+        +void mostrarSaldo()
+    }
+
+    CuentaBasica <|-- CuentaCorriente
+    CuentaBasica <|-- CuentaAhorros
+    CuentaBasica <|-- CuentaInversion : Private Inheritance
+    Transaccionable <|.. CuentaCorriente
+    Transaccionable <|.. CuentaAhorros
+    Transaccionable <|.. CuentaInversion
+```
+
+### Explicación del Diagrama <!-- omit in toc -->  
+
+En este diagrama, las **flechas vacías** indican relaciones de **herencia**. Específicamente, muestra que:  
+- **`CuentaCorriente` y `CuentaAhorros` heredan públicamente de `CuentaBasica`**, lo cual les permite acceder a sus métodos públicos (`getNombre()`, `getSaldo()`, `mostrarSaldo()`) pero no a sus atributos privados (`nombre`, `saldo`).  
+- **`CuentaInversion` hereda privadamente de `CuentaBasica`**, lo cual significa que sus métodos y atributos heredados son privados en `CuentaInversion`. Para mostrar el saldo, debe usar un método específico (`mostrarSaldo()`) que llama internamente a la función de la clase base.  
+
+Además, las líneas punteadas que apuntan desde `CuentaCorriente`, `CuentaAhorros` y `CuentaInversion` hacia `Transaccionable` indican que estas clases **implementan la interfaz `Transaccionable`**. Esto significa que deben proporcionar sus propias implementaciones de los métodos `consignar()` y `retirar()`.  
+
+El uso del signo `+` indica que un método es **público**, mientras que `-` indica que un atributo es **privado**.  
+
+Finalmente, el diagrama refleja un diseño basado en **polimorfismo e interfaces**, donde `Transaccionable` asegura que todas las cuentas puedan realizar transacciones de forma coherente.
+
+---
 
