@@ -55,26 +55,20 @@ El programa debe admitir los siguientes comandos:
 3. **Modificadores Especiales:**
    - **Dragón:**
      - Tiene un atributo llamado `fireResistance` (resistencia al fuego), que reduce el daño recibido en un porcentaje determinado.
-     - Fórmula para calcular daño recibido:  
-       $$
-       \text{Daño Recibido} = \text{fuerza} \times \left(1 - \frac{\text{fireResistance}}{100}\right)
-       $$
+     - Fórmula para calcular daño recibido: **Daño Recibido** = fuerza × (1 - (fireResistance / 100)) 
    - **Hada:**
      - Tiene un atributo llamado `healingPower` (poder de curación), que permite recuperarse un porcentaje del daño recibido después de cada ataque.
-     - Fórmula para curación:  
-       $$
-       \text{Curación} = \frac{\text{Daño Recibido} \times \text{healingPower}}{100}
-       $$
+     - Fórmula para curación: **Curación** = (Daño Recibido × healingPower) / 100
      - El `Hada` recupera vida inmediatamente después de recibir el ataque.
 
-4. **Muerte de la Criatura:**
+1. **Muerte de la Criatura:**
    - Cuando la vitalidad de una criatura llega a **0 o menos**, se declara muerta y no puede atacar ni ser atacada nuevamente.
    - El programa debe imprimir un mensaje como:
      ```
      Celestia ha sido derrotada.
      ```
 
-5. **Fin de la Batalla:**
+2. **Fin de la Batalla:**
    - La batalla termina cuando todas las criaturas menos una son derrotadas, o si se indica explícitamente por un comando especial (opcional).
 
 ---
