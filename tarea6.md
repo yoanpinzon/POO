@@ -1,5 +1,7 @@
 # **🧮 Tarea 6 - Sistema de Batalla RPG**
 
+[![Unirse a la tarea](https://img.shields.io/badge/%F0%9F%91%89%20Unirse%20a%20la%20tarea%20en%20GitHub%20Classroom-blue?style=for-the-badge)](https://classroom.github.com/a/kng-JZHG)
+
 ## **📢🚨 FECHA LÍMITE: Jueves 20 de marzo - 23:59 🚨📢** <!-- omit in toc -->
 
 ⚠️ **ENTREGAS FUERA DE TIEMPO NO SERÁN ACEPTADAS.**  
