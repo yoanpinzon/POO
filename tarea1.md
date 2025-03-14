@@ -1,5 +1,7 @@
 # **👽 Tarea 1 - Estacionamiento Intergaláctico**
 
+[![Unirse a la tarea](https://img.shields.io/badge/%F0%9F%91%89%20Unirse%20a%20la%20tarea%20en%20GitHub%20Classroom-blue?style=for-the-badge)](https://classroom.github.com/a/tJpLCAHZ)
+
 ## **📢🚨 FECHA LÍMITE: 10 de FEBRERO - 10:00 AM 🚨📢** <!-- omit in toc --> 
 ⚠️ **ENTREGAS FUERA DE TIEMPO NO SERÁN ACEPTADAS.**  
 ✅ **Haz `commit` y `push` antes del plazo y verifica tu entrega en GitHub Classroom.**
