@@ -1,4 +1,4 @@
-# **👽 Tarea - Estacionamiento Intergaláctico**
+# **👽 Tarea 1 - Estacionamiento Intergaláctico**
 
 ## **📢🚨 FECHA LÍMITE: 10 de FEBRERO - 10:00 AM 🚨📢** <!-- omit in toc --> 
 ⚠️ **ENTREGAS FUERA DE TIEMPO NO SERÁN ACEPTADAS.**  
