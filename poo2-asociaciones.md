@@ -714,7 +714,7 @@ Tanto la **Agregación** como la **Composición** son tipos específicos de asoc
 
 # 5. Ejercicios
 
-Hacerl el diagrama de clases para el siguiente programa:
+Realizar el diagrama de clases para los siguientes programas:
 
 ## Programa 1
 
