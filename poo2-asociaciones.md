@@ -91,7 +91,6 @@ En este capítulo, continuaremos profundizando en la programación orientada a o
       - [📌 **Código**](#-código-2)
       - [📌 **Explicación**](#-explicación-2)
       - [📌 **Diagrama UML**](#-diagrama-uml-2)
-- [Diagrama UML - Sistema Hotel](#diagrama-uml---sistema-hotel)
       - [📌 **Explicación del Diagrama UML**](#-explicación-del-diagrama-uml-2)
 - [3. **Comparación entre Agregación y Composición**](#3-comparación-entre-agregación-y-composición)
   - [**Principales Diferencias**](#principales-diferencias)
@@ -617,8 +616,6 @@ Habitacion destruida: 102
 - **Métodos útiles**: `mostrarInfo()` permite ver la cantidad de habitaciones y clientes registrados en el hotel.
 
 #### 📌 **Diagrama UML**
-
-# Diagrama UML - Sistema Hotel
 
 ```mermaid
 classDiagram
