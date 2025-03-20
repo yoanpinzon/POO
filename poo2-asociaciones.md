@@ -2,7 +2,7 @@
 ---
 
 # 💻 300CIS017 Programación Orientada a Objetos 2025-01  <!-- omit in toc -->
-![Version](https://img.shields.io/badge/version-1.0-blue)
+![Version](https://img.shields.io/badge/version-1.2-blue)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ---
@@ -90,6 +90,10 @@ En este capítulo, continuaremos profundizando en la programación orientada a o
     - [📌 **Ejemplo 3:** Hotel y Habitaciones (Composición)](#-ejemplo-3-hotel-y-habitaciones-composición)
       - [📌 **Código**](#-código-2)
       - [📌 **Explicación**](#-explicación-2)
+  - [🔍 **Teoría sobre `emplace_back()` en C++**](#-teoría-sobre-emplace_back-en-c)
+    - [📌 **Diferencias entre `push_back()` y `emplace_back()`**](#-diferencias-entre-push_back-y-emplace_back)
+    - [🔑 **Ejemplo aplicado a nuestro código:**](#-ejemplo-aplicado-a-nuestro-código)
+  - [📈 **Ventajas de `emplace_back()` en tu código**](#-ventajas-de-emplace_back-en-tu-código)
       - [📌 **Diagrama UML**](#-diagrama-uml-2)
       - [📌 **Explicación del Diagrama UML**](#-explicación-del-diagrama-uml-2)
 - [3. **Comparación entre Agregación y Composición**](#3-comparación-entre-agregación-y-composición)
@@ -614,6 +618,49 @@ Habitacion destruida: 102
 - **Creación y Destrucción**: Los constructores y destructores de cada clase imprimen mensajes para demostrar el ciclo de vida de los objetos.
 
 - **Métodos útiles**: `mostrarInfo()` permite ver la cantidad de habitaciones y clientes registrados en el hotel.
+
+<details><summary>Entendiendo el emplace_back</summary>
+
+## 🔍 **Teoría sobre `emplace_back()` en C++**  
+En C++, la función `emplace_back()` es un método de los contenedores estándar como `vector`, `deque`, y `list` (de la biblioteca estándar STL). Es preferido sobre `push_back()` cuando se quiere construir un objeto directamente dentro del contenedor sin crear una copia temporal. Veamos por qué esto es importante.  
+
+---
+
+### 📌 **Diferencias entre `push_back()` y `emplace_back()`**  
+| `push_back()`                          | `emplace_back()`                        |
+|---------------------------------------|---------------------------------------|
+| Inserta un objeto al final del contenedor **copiando o moviendo** el objeto proporcionado. | Construye el objeto **directamente en la memoria del contenedor** (sin copiar o mover). |
+| Requiere que el objeto ya exista antes de la inserción. | Permite construir el objeto en su lugar proporcionando sus argumentos al constructor. |
+| Menor eficiencia si se crea un objeto temporal. | Mayor eficiencia al evitar copias o movimientos innecesarios. |
+
+---
+
+### 🔑 **Ejemplo aplicado a nuestro código:**  
+En nuestro código, `emplace_back()` se utiliza en las siguientes líneas:  
+
+```cpp
+habitaciones.emplace_back(numero, tipo);
+clientes.emplace_back(id, nombre);
+```
+
+En estos casos:  
+1. `habitaciones.emplace_back(numero, tipo);`  
+   - Este código crea un objeto `Habitacion` usando su constructor `Habitacion(int num, string t)`.  
+   - Se llama al constructor con los parámetros proporcionados `(numero, tipo)` y se construye directamente dentro del vector `habitaciones`.  
+   - No se crea un objeto temporal que deba ser copiado o movido, lo cual mejora la eficiencia.  
+
+2. `clientes.emplace_back(id, nombre);`  
+   - De manera similar, se crea un objeto `Cliente` dentro del vector `clientes` usando su constructor `Cliente(int i, string n)`.  
+   - Nuevamente, el objeto se construye directamente en la memoria del contenedor sin necesidad de copias o movimientos adicionales.  
+
+---
+
+## 📈 **Ventajas de `emplace_back()` en tu código**  
+1. **Eficiencia mejorada:** Al evitar la creación de objetos temporales, se mejora el rendimiento, especialmente cuando se insertan muchos elementos como habitaciones y clientes en el sistema.  
+2. **Código más limpio:** Permite una sintaxis más directa al agregar objetos al vector, ya que no necesitas declarar los objetos antes de agregarlos.  
+3. **Uso de constructores:** Facilita el uso de cualquier constructor disponible para `Habitacion` y `Cliente`, proporcionándoles directamente sus argumentos al momento de agregarlos.  
+
+</details>
 
 #### 📌 **Diagrama UML**
 
