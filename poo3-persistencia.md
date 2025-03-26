@@ -2,7 +2,7 @@
 ---
 
 # 💻 300CIS017 Programación Orientada a Objetos 2025-01  <!-- omit in toc -->
-![Version](https://img.shields.io/badge/version-1.0-blue)
+![Version](https://img.shields.io/badge/version-1.4-blue)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ---
@@ -73,19 +73,17 @@ En este capítulo, continuaremos explorando la programación orientada a objetos
 ### **Tabla de Contenido**
 
 - [1. **Introducción a la Persistencia en C++**](#1-introducción-a-la-persistencia-en-c)
-  - [2. **Persistencia con Archivos de Texto en C++**](#2-persistencia-con-archivos-de-texto-en-c)
-    - [🔹 **Cómo Funciona**](#-cómo-funciona)
-    - [📌 **Ejemplo 1:** Almacenamiento de productos en una tienda mediante archivos de texto.](#-ejemplo-1-almacenamiento-de-productos-en-una-tienda-mediante-archivos-de-texto)
-      - [📌 **Código**](#-código)
-      - [📌 **Explicación**](#-explicación)
-      - [📌 **Diagrama UML**](#-diagrama-uml)
-  - [3. **Persistencia con Serialización en JSON en C++**](#3-persistencia-con-serialización-en-json-en-c)
-    - [🔹 **¿Qué es la serialización?**](#-qué-es-la-serialización)
-    - [🔹 **Cómo Funciona en C++**](#-cómo-funciona-en-c)
-    - [📌 **Ejemplo 2:** Almacenamiento de productos en una tienda mediante serialización con JSON.](#-ejemplo-2-almacenamiento-de-productos-en-una-tienda-mediante-serialización-con-json)
-      - [📌 **Código**](#-código-1)
-      - [📌 **Explicación**](#-explicación-1)
-      - [📌 **Diagrama UML**](#-diagrama-uml-1)
+- [2. **Persistencia con Archivos de Texto en C++**](#2-persistencia-con-archivos-de-texto-en-c)
+    - [📌 **Ejemplo 1:** Almacenamiento y recuperación de números con un **arreglo estático** mediante **archivos de texto**.](#-ejemplo-1-almacenamiento-y-recuperación-de-números-con-un-arreglo-estático-mediante-archivos-de-texto)
+    - [📌 **Ejemplo 2:** Almacenamiento y recuperación de números con un **vector** mediante **archivos de texto**.](#-ejemplo-2-almacenamiento-y-recuperación-de-números-con-un-vector-mediante-archivos-de-texto)
+    - [📌 **Ejemplo 3:** Almacenamiento de productos en una **tienda** mediante **archivos de texto**.](#-ejemplo-3-almacenamiento-de-productos-en-una-tienda-mediante-archivos-de-texto)
+- [3. **Persistencia con Archivos Binarios en C++**](#3-persistencia-con-archivos-binarios-en-c)
+    - [📌 **Ejemplo 4:** Almacenamiento y recuperación de números con un **arreglo estático** en un **archivo binario**](#-ejemplo-4-almacenamiento-y-recuperación-de-números-con-un-arreglo-estático-en-un-archivo-binario)
+    - [📌 **Ejemplo 5:** Almacenamiento y recuperación de números con un **vector** en un **archivo binario**.](#-ejemplo-5-almacenamiento-y-recuperación-de-números-con-un-vector-en-un-archivo-binario)
+- [4. **Persistencia con Serialización en JSON en C++**](#4-persistencia-con-serialización-en-json-en-c)
+    - [📌 **Ejemplo 6:** Almacenamiento y recuperación de números con un **arreglo estático** utilizando **serialización con JSON**.](#-ejemplo-6-almacenamiento-y-recuperación-de-números-con-un-arreglo-estático-utilizando-serialización-con-json)
+    - [📌 **Ejemplo 7:** Almacenamiento y recuperación de números con un **vector** utilizando **serialización con JSON**.](#-ejemplo-7-almacenamiento-y-recuperación-de-números-con-un-vector-utilizando-serialización-con-json)
+    - [📌 **Ejemplo 8:** Almacenamiento de productos en una **tienda** mediante **serialización con JSON**.](#-ejemplo-8-almacenamiento-de-productos-en-una-tienda-mediante-serialización-con-json)
 
 ---
 
@@ -114,16 +112,13 @@ Las principales técnicas de persistencia en C++ incluyen:
 > - **Serialización** facilita la interoperabilidad con otros sistemas.
 >
 
-En este documento, exploraremos dos formas de persistencia en C++:  
+En este documento, exploraremos cómo **persistir datos en C++** mediante **archivos de texto, binarios y serialización con JSON**. Nos enfocaremos en estos métodos por su simplicidad y portabilidad, dejando de lado las bases de datos, ya que su configuración y uso exceden el alcance de este material. 
 
-- **Uso de archivos de texto** para almacenar productos en una tienda.  
-- **Uso de Serialización con JSON** para almacenar productos en una tienda.  
-
-## 2. **Persistencia con Archivos de Texto en C++**  
+# 2. **Persistencia con Archivos de Texto en C++**  
 
 Los archivos de texto son una de las formas más simples de persistencia en C++. Se utilizan para guardar información en un formato legible, permitiendo que los datos sean recuperados en futuras ejecuciones del programa.  
 
-### 🔹 **Cómo Funciona**  
+### 🔹 **Cómo Funciona** <!-- omit in toc --> 
 El proceso básico de uso de archivos de texto en C++ consiste en:  
 
 1. **Abrir un archivo** usando `ofstream` (para escribir) o `ifstream` (para leer).  
@@ -133,11 +128,133 @@ El proceso básico de uso de archivos de texto en C++ consiste en:
 
 C++ proporciona la biblioteca `<fstream>` para manejar archivos de manera sencilla.  
 
+### 📌 **Ejemplo 1:** Almacenamiento y recuperación de números con un **arreglo estático** mediante **archivos de texto**. 
+
+En este ejemplo, se demuestra cómo escribir y leer un conjunto de números en un archivo de texto utilizando un **arreglo estático**. Primero, el programa guarda 10 números en el archivo. Luego, los lee y los almacena en otro arreglo estático para su posterior uso.  
+
+#### 📌 **Código** <!-- omit in toc -->
+
+```cpp
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    int numeros[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+    int numerosLeidos[10];
+
+    // Guardar datos en el archivo
+    ofstream archivoSalida("../datos.txt");
+    if (archivoSalida) {
+        for (int i = 0; i < 10; i++) {
+            archivoSalida << numeros[i] << " ";
+        }
+        archivoSalida.close();
+        cout << "Datos guardados en ../datos.txt\n";
+    } else {
+        cout << "Error al abrir el archivo para escritura.\n";
+        return 1;
+    }
+
+    // Leer datos del archivo y almacenarlos en un arreglo diferente
+    ifstream archivoEntrada("../datos.txt");
+    if (archivoEntrada) {
+        cout << "Datos leídos del archivo:\n";
+        for (int i = 0; i < 10; i++) {
+            archivoEntrada >> numerosLeidos[i];
+            cout << numerosLeidos[i] << " ";
+        }
+        cout << endl;
+        archivoEntrada.close();
+    } else {
+        cout << "Error al abrir el archivo para lectura.\n";
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+**Salida:**
+
+```
+Datos guardados en ../datos.txt
+Datos leídos del archivo:
+10 20 30 40 50 60 70 80 90 100
+```
+
 ---
 
-### 📌 **Ejemplo 1:** Almacenamiento de productos en una tienda mediante archivos de texto.
+### 📌 **Ejemplo 2:** Almacenamiento y recuperación de números con un **vector** mediante **archivos de texto**. 
 
-#### 📌 **Código**
+En este ejemplo, se muestra cómo escribir y leer un conjunto de números en un archivo de texto utilizando un `vector`. Primero, el programa almacena 10 números en un archivo. Luego, los lee desde el archivo y los almacena en otro `vector` para su posterior uso. Esta implementación permite manejar dinámicamente los datos sin necesidad de definir un tamaño fijo para el almacenamiento.  
+
+
+#### 📌 **Código** <!-- omit in toc -->
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    // Vector con 10 elementos
+    vector<int> numeros = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+    // Guardar en archivo
+    ofstream archivoSalida("../datos2.txt");
+    if (archivoSalida.is_open()) {
+        for (int num : numeros) {
+            archivoSalida << num << " ";
+        }
+        archivoSalida.close();
+        cout << "Datos guardados en ../datos2.txt\n";
+    } else {
+        cout << "Error al abrir el archivo para escritura.\n";
+    }
+
+    // Leer desde el archivo
+    ifstream archivoEntrada("../datos2.txt");
+    if (archivoEntrada.is_open()) {
+        vector<int> numerosLeidos;
+        int num;
+        while (archivoEntrada >> num) {
+            numerosLeidos.push_back(num);
+        }
+        archivoEntrada.close();
+
+        // Mostrar datos leídos
+        cout << "Datos leídos del archivo:\n";
+        for (int n : numerosLeidos) {
+            cout << n << " ";
+        }
+        cout << endl;
+    } else {
+        cout << "Error al abrir el archivo para lectura.\n";
+    }
+
+    return 0;
+}
+```
+
+**Salida:**
+
+```
+Datos guardados en ../datos2.txt
+Datos leídos del archivo:
+10 20 30 40 50 60 70 80 90 100
+```
+
+---
+
+### 📌 **Ejemplo 3:** Almacenamiento de productos en una **tienda** mediante **archivos de texto**.
+
+En este ejemplo, se crea un sistema de gestión de productos para una tienda. Se implementa una clase Producto para representar cada artículo con su nombre, precio y stock. Además, la clase Tienda permite agregar productos y manipularlos fácilmente. Se muestra cómo almacenar y recuperar estos datos de manera eficiente.
+
+#### 📌 **Código** <!-- omit in toc -->
 
 ```cpp
 #include <iostream>
@@ -273,7 +390,7 @@ GameStore:
 
 ---
 
-#### 📌 **Explicación**
+#### 📌 **Explicación** <!-- omit in toc -->
 
 Este código representa una tienda que maneja productos y permite **guardar** y **cargar** los datos desde archivos de texto.  
 
@@ -500,7 +617,7 @@ int main() {
 
 ---
 
-#### 📌 **Diagrama UML**
+#### 📌 **Diagrama UML** <!-- omit in toc -->
 
 ```mermaid
 classDiagram
@@ -529,14 +646,166 @@ classDiagram
     Tienda *-- Producto 
 ```
 
-## 3. **Persistencia con Serialización en JSON en C++**  
+
+# 3. **Persistencia con Archivos Binarios en C++**  
+
+Los archivos binarios ofrecen una manera más eficiente de almacenar y recuperar datos en comparación con los archivos de texto. En lugar de guardar la información como caracteres legibles, los archivos binarios almacenan los datos en su formato de memoria original, lo que permite una lectura y escritura más rápidas.  
+
+---
+
+### 🔹 **Ventajas de los Archivos Binarios**   <!-- omit in toc -->
+
+- **Mayor eficiencia** 🚀: Almacenan los datos en su forma cruda, evitando conversiones innecesarias.  
+- **Menor tamaño de archivo** 📦: No requieren caracteres adicionales como espacios o saltos de línea.  
+- **Mayor precisión** 🎯: Ideal para datos numéricos y estructuras complejas.  
+
+### 🔹 **Desventajas de los Archivos Binarios** <!-- omit in toc --> 
+
+- **No son legibles para humanos** 🧐: Almacenan los datos en su formato crudo, lo que impide su lectura directa en un editor de texto.  
+- **Falta de portabilidad** 🌍: La forma en que se guardan los datos puede variar según el sistema operativo y la arquitectura del procesador.  
+- **Edición manual complicada** ✍️: No pueden modificarse fácilmente sin herramientas especializadas o sin reescribir todo el archivo.  
+- **Mayor riesgo de corrupción** ⚠️: Un error en la escritura o lectura puede dañar los datos y hacer que el archivo sea inutilizable.  
+
+### 🔹 **Cómo Funciona**  <!-- omit in toc -->
+El proceso básico de uso de archivos binarios en C++ consiste en:  
+1. **Abrir un archivo** en modo binario (`ios::binary`) usando `ofstream` (para escribir) o `ifstream` (para leer).  
+2. **Escribir datos** usando `write()`, que almacena directamente los bytes de memoria en el archivo.  
+3. **Leer datos** usando `read()`, que recupera los datos en su formato original.  
+4. **Cerrar el archivo** para liberar recursos.  
+
+C++ proporciona la biblioteca `<fstream>` para manejar archivos binarios de manera sencilla.  
+
+---
+
+### 📌 **Ejemplo 4:** Almacenamiento y recuperación de números con un **arreglo estático** en un **archivo binario**  
+
+En este ejemplo, el programa guarda 10 números enteros en un archivo binario y luego los lee, almacenándolos en otro arreglo estático para su posterior uso.  
+
+#### 📌 **Código**  <!-- omit in toc -->
+
+```cpp
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    // Arreglo de 10 elementos
+    int numeros[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+    // Guardar en archivo binario
+    ofstream archivoSalida("../datos.bin", ios::binary);
+    if (archivoSalida) {
+        archivoSalida.write(reinterpret_cast<char*>(numeros), sizeof(numeros));
+        archivoSalida.close();
+        cout << "Datos guardados en ../datos.bin\n";
+    } else {
+        cout << "Error al abrir el archivo para escritura.\n";
+        return 1;
+    }
+
+    // Leer desde el archivo binario y cargar en un nuevo arreglo
+    int numerosLeidos[10] = {0}; // Inicializado en 0
+
+    ifstream archivoEntrada("../datos.bin", ios::binary);
+    if (archivoEntrada) {
+        archivoEntrada.read(reinterpret_cast<char*>(numerosLeidos), sizeof(numerosLeidos));
+        archivoEntrada.close();
+
+        // Mostrar los datos recuperados
+        cout << "Datos recuperados en el arreglo:\n";
+        for (int num : numerosLeidos) {
+            cout << num << " ";
+        }
+        cout << endl;
+
+    } else {
+        cout << "Error al abrir el archivo para lectura.\n";
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+**Salida:**
+
+```
+Datos guardados en ../datos.bin
+Datos recuperados en el arreglo:
+10 20 30 40 50 60 70 80 90 100
+```
+
+---
+
+### 📌 **Ejemplo 5:** Almacenamiento y recuperación de números con un **vector** en un **archivo binario**.  
+
+En este ejemplo, el programa guarda 10 números enteros en un archivo binario y luego los lee, almacenándolos en otro vector para su posterior uso.  
+
+#### 📌 **Código**  <!-- omit in toc -->
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    // Vector con 10 elementos
+    vector<int> numeros = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+    // Guardar en archivo binario
+    ofstream archivoSalida("../datos2.bin", ios::binary);
+    if (archivoSalida) {
+        archivoSalida.write(reinterpret_cast<char*>(numeros.data()), numeros.size() * sizeof(int));
+        archivoSalida.close();
+        cout << "Datos guardados en ../datos2.bin\n";
+    } else {
+        cout << "Error al abrir el archivo para escritura.\n";
+        return 1;
+    }
+
+    // Leer desde el archivo binario y cargar en un vector
+    vector<int> numerosLeidos(10); // Se reserva espacio para 10 elementos
+
+    ifstream archivoEntrada("../datos2.bin", ios::binary);
+    if (archivoEntrada) {
+        archivoEntrada.read(reinterpret_cast<char*>(numerosLeidos.data()), numerosLeidos.size() * sizeof(int));
+        archivoEntrada.close();
+
+        // Mostrar los datos recuperados en el vector
+        cout << "Datos recuperados en el vector:\n";
+        for (int num : numerosLeidos) {
+            cout << num << " ";
+        }
+        cout << endl;
+
+    } else {
+        cout << "Error al abrir el archivo para lectura.\n";
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+**Salida:**
+
+```
+Datos guardados en ../datos2.bin
+Datos recuperados en el vector:
+10 20 30 40 50 60 70 80 90 100
+```
+
+# 4. **Persistencia con Serialización en JSON en C++**  
 
 Además de los archivos de texto, otra forma eficiente de almacenar datos es mediante **serialización**, convirtiendo objetos en un formato estructurado como **JSON**. Esto facilita la persistencia y permite que los datos sean compartidos entre diferentes sistemas o lenguajes de programación.  
 
-### 🔹 **¿Qué es la serialización?**  
+### 🔹 **¿Qué es la serialización?**  <!-- omit in toc -->
 La **serialización** es el proceso de convertir un objeto en un formato que pueda ser almacenado o transmitido y posteriormente reconstruido en su estado original. En este caso, usamos **JSON (JavaScript Object Notation)**, un formato ligero y legible.  
 
-### 🔹 **Cómo Funciona en C++**  
+### 🔹 **Cómo Funciona en C++**  <!-- omit in toc -->
 Para serializar y deserializar objetos en JSON, usamos la biblioteca [`nlohmann/json`](https://github.com/nlohmann/json), que proporciona una forma sencilla de convertir objetos de C++ a JSON y viceversa.  
 
 El proceso general es:  
@@ -547,9 +816,152 @@ El proceso general es:
 
 ---
 
-### 📌 **Ejemplo 2:** Almacenamiento de productos en una tienda mediante serialización con JSON.
+### 📌 **Ejemplo 6:** Almacenamiento y recuperación de números con un **arreglo estático** utilizando **serialización con JSON**.  
 
-#### 📌 **Código**
+En este ejemplo, el programa almacena 10 números enteros en un archivo utilizando **serialización con JSON**. Primero, los datos se convierten a formato JSON y se guardan en un archivo `.json`. Luego, el programa los lee, los convierte nuevamente en enteros y los almacena en otro **arreglo estático**, demostrando cómo persistir datos de manera estructurada y legible.  
+
+#### 📌 **Código**  <!-- omit in toc -->
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include "json.hpp" // Biblioteca JSON
+
+using json = nlohmann::json;
+
+int main() {
+    // Arreglo original de 10 elementos
+    int numeros[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+    // Convertir a JSON y guardar en archivo
+    json j;
+    j["numeros"] = numeros;
+    std::ofstream archivoSalida("../datos.json");
+    if (archivoSalida.is_open()) {
+        archivoSalida << j.dump(4); // Formato legible
+        archivoSalida.close();
+        std::cout << "Datos guardados en ../datos.json\n";
+    } else {
+        std::cout << "Error al abrir el archivo para escritura.\n";
+        return 1;
+    }
+
+    // Leer desde el archivo JSON y cargar en un arreglo
+    std::ifstream archivoEntrada("../datos.json");
+    if (archivoEntrada.is_open()) {
+        json jLeido;
+        archivoEntrada >> jLeido;
+        archivoEntrada.close();
+
+        // Nuevo arreglo para almacenar los datos leídos
+        int numerosLeidos[10] = {0}; // Inicializado en 0
+
+        // Copiar datos del JSON al arreglo
+        for (size_t i = 0; i < jLeido["numeros"].size() && i < 10; i++) {
+            numerosLeidos[i] = jLeido["numeros"][i];
+        }
+
+        // Mostrar los datos recuperados en el arreglo
+        std::cout << "Datos recuperados en el arreglo:\n";
+        for (int num : numerosLeidos) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+
+    } else {
+        std::cout << "Error al abrir el archivo para lectura.\n";
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+**Salida:**
+
+```
+Datos guardados en ../datos.json
+Datos recuperados en el arreglo:
+10 20 30 40 50 60 70 80 90 100
+```
+
+---
+
+### 📌 **Ejemplo 7:** Almacenamiento y recuperación de números con un **vector** utilizando **serialización con JSON**.
+
+Este ejemplo muestra cómo almacenar y recuperar datos usando un **vector** en un archivo JSON. Los datos se guardan en formato JSON, permitiendo una representación estructurada y fácil de interpretar. Luego, el programa los lee y los almacena en un **vector**, lo que facilita su manipulación sin necesidad de definir un tamaño fijo.  
+
+#### 📌 **Código**  <!-- omit in toc -->
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include "json.hpp" // Biblioteca JSON
+
+using json = nlohmann::json;
+
+int main() {
+    // Vector con 10 elementos
+    std::vector<int> numeros = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+    // Guardar en JSON
+    json j;
+    j["numeros"] = numeros;
+    std::ofstream archivoSalida("../datos2.json");
+    if (archivoSalida.is_open()) {
+        archivoSalida << j.dump(4);
+        archivoSalida.close();
+        std::cout << "Datos guardados en ../datos2.json\n";
+    } else {
+        std::cout << "Error al abrir el archivo para escritura.\n";
+        return 1;
+    }
+
+    // Leer desde el archivo JSON
+    std::ifstream archivoEntrada("../datos2.json");
+    if (archivoEntrada.is_open()) {
+        json jLeido;
+        archivoEntrada >> jLeido;
+        archivoEntrada.close();
+
+        // Crear un vector vacío
+        std::vector<int> numerosLeidos;
+
+        // Llenar el vector manualmente sin .get<>
+        for (const auto& num : jLeido["numeros"]) {
+            numerosLeidos.push_back(num);
+        }
+
+        // Mostrar los datos recuperados en el vector
+        std::cout << "Datos recuperados en el vector:\n";
+        for (int num : numerosLeidos) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+
+    } else {
+        std::cout << "Error al abrir el archivo para lectura.\n";
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+**Salida:**
+
+```
+Datos guardados en ../datos2.json
+Datos recuperados en el vector:
+10 20 30 40 50 60 70 80 90 100
+```
+
+---
+
+### 📌 **Ejemplo 8:** Almacenamiento de productos en una **tienda** mediante **serialización con JSON**.
+
+#### 📌 **Código** <!-- omit in toc -->
 
 ```cpp
 #include <iostream>
@@ -695,7 +1107,7 @@ GameStore:
 
 ---
 
-#### 📌 **Explicación**
+#### 📌 **Explicación** <!-- omit in toc -->
 
 ## **1️⃣ Bibliotecas Incluidas** <!-- omit in toc -->
 ```cpp
@@ -935,7 +1347,7 @@ int main() {
 
 ---
 
-#### 📌 **Diagrama UML**
+#### 📌 **Diagrama UML** <!-- omit in toc -->
 
 ```mermaid
 classDiagram
