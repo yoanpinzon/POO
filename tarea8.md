@@ -24,10 +24,10 @@ El **Banco Javeriano** desea desarrollar un sistema en **C++** que gestione info
    - Guardar y cargar los datos en un archivo **JSON**.  
 
 2. **Clientes**:  
-   - Cada cliente tiene un **ID único** (asignado automáticamente), un **nombre** y una **dirección**.  
+   - Cada cliente tiene un **ID único** (asignado automáticamente comenzando en 1), un **nombre** y una **dirección**.  
 
 3. **Cuentas**:  
-   - Cada cuenta tiene un **número único**, un **saldo** y está asociada a un **cliente**.  
+   - Cada cuenta tiene un **número único** (asignado automáticamente comenzando en 100), un **saldo** y está asociada a un **cliente**.  
    - Existen dos tipos de cuentas mediante **herencia**:  
      - **Cuenta de Ahorros**: Tiene una **tasa de interés**, la cual se aplica de manera mensual al saldo disponible en la cuenta.  
      - **Cuenta Corriente**: Tiene un **límite de sobregiro**, lo que permite al cliente retirar más dinero del que posee en su saldo, hasta un monto límite definido.  
