@@ -68,7 +68,8 @@ MENU BANCO JAVERIANO
 
 4) OPERACIONES FINANCIERAS
    4.1) Aplicar Tasa de Interés a Cuentas de Ahorro
-
+   4.2) Consignar Dinero en una Cuenta
+   4.3) Retirar Dinero de una Cuenta
 5) SALIR
    5.1) Guardar los datos en BancoJaveriano.json y cerrar el programa.
 ```
