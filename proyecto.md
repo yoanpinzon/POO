@@ -1,6 +1,10 @@
 # 🌿 **Las Cicatrices del Valle Iridiano**  
 ### *Proyecto Final de Programación Orientada a Objetos*
 
+![Version](https://img.shields.io/badge/version-1.2-blue)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+
 ## 🕰️ **Fecha de Entrega:** *Según la fecha acordada en clase*
 
 ---
@@ -248,6 +252,26 @@ Ejemplo de tabla para `calificacion.md`:
 | Promedio Coevaluación (María + Diego) | 17.5    |
 | **Promedio Final**     | **17.75 / 20** |
 
+---
+
+# 📅 Cronograma Completo de Sustentaciones
+
+| Día | Hora | Grupo | Nombre del Grupo | Líder | Miembros |
+|-----|------|--------|------------------|--------|-----------|
+| mié. 30/04/2025 | 7:00 a. m. | 13 | Virtual insanity | Hanna Lozano Orozco | Valerie Marmolejo Molina |
+| mié. 30/04/2025 | 7:30 a. m. | 11 | Sparkies VII | Juan Fernando Muñoz Lopez | Santiago Henao Ramirez |
+| mié. 30/04/2025 | 8:00 a. m. | 2 | Cafe y depuración | Isabella Arango Moreno | Santiago Carvajal Chamorro |
+| mié. 30/04/2025 | 8:30 a. m. | 5 | Los desprogramadores | Juan Jose Lopez Valencia | Martin Estrada Agudelo |
+| vie. 02/05/2025 | 7:30 a. m. | 7 | Los pájaros | Juan Camilo Espinosa Arias | Juan Felipe Sanchez Morillo, Samuel Cuervo Peña |
+| vie. 02/05/2025 | 8:00 a. m. | 9 | Objetos en evolución | Samuel Chacon Roman | Sebastian Duran Barros |
+| vie. 02/05/2025 | 8:30 a. m. | 1 | .pinzon | Antonia Salguero Cortes | Juan Sebastian Silva Caicedo, Miguel Angel Rodriguez Bermudez |
+| mié. 07/05/2025 | 7:30 a. m. | 6 | Los gepetos | Carlos David Sanchez Calderon | Emerson David Perea Mosquera, Juan Esteban Ramirez Delarosa, Pablo Tomas Bejarano Muñoz, Samuel David Mueses Cadavid, Samuel Eduardo Guzman Conde |
+| mié. 07/05/2025 | 8:00 a. m. | 12 | Triple J | Jose Daniel Mesa Velasquez | Jose David Gonzalez Muñoz, Julian Andres Hurtado Florez |
+| mié. 07/05/2025 | 8:30 a. m. | 4 | Las estrellitas flamantes | Isabella Garzon Salazar | Juan David Rojas Umaña |
+| mié. 07/05/2025 | 9:00 a. m. | 8 | Los traquetos | Isabella Ramirez Echeverry | Juan Manuel Ramirez Gonzalez |
+| vie. 09/05/2025 | 7:30 a. m. | 10 | Sapiens | David Avila Rodriguez | Sara Isabel Orrego Gallego |
+| vie. 09/05/2025 | 8:00 a. m. | 3 | Crínima 2.1 | Cristian Miguel Hoyos Leon | Maria Isabel Solis Gonzalez, Nicolle Stheyzy Ureña Garcia |
+| vie. 09/05/2025 | 8:30 a. m. | 14 | YuPro | Shi Jian Alejandro Yu Chen | *(Sin miembros adicionales registrados)* |
 
 ---
 
