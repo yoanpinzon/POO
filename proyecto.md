@@ -5,7 +5,7 @@
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
-## 🕰️ **Fecha de Entrega:** *Según la fecha acordada en clase*
+## 🕰️ **Fecha de Entrega:** [Ver cronograma al final](#-cronograma-completo-de-sustentaciones)
 
 ---
 
