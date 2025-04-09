@@ -122,6 +122,52 @@ Para garantizar una experiencia de desarrollo colaborativa, profesional y organi
     - Guía de contribución y uso de ramas.  
     - Créditos y roles del equipo.
 
+### 📂 **Archivos obligatorios del repositorio**
+
+El repositorio del proyecto debe incluir:
+
+¡Genial! Acá va todo integrado, con **la profundidad completa** que mencionaste, dentro del esquema original que ya tenías:
+
+---
+
+### 📂 **Archivos obligatorios del repositorio**
+
+El repositorio del proyecto debe incluir:
+
+1️⃣ `README.md` obligatorio con:
+
+  - 📘 **Descripción del proyecto**:  
+    Breve explicación del propósito del sistema, el problema que resuelve y a quién está dirigido (usuarios objetivo).
+
+  - 🧑‍💻 **Manual del usuario**:  
+    Guía clara y amigable para entender cómo se utiliza la aplicación. Puede incluir:  
+    - Principales funcionalidades y casos de uso.  
+    - Instrucciones paso a paso para interactuar con la interfaz o los comandos.  
+    - Capturas de pantalla o ejemplos de uso (si es posible).  
+    - Requisitos mínimos para su uso (por ejemplo: navegador recomendado, permisos necesarios, resolución mínima, etc.).
+
+  - 🛠️ **Instrucciones de compilación y ejecución** (si aplica):  
+    - Cómo clonar el repositorio y preparar el entorno.  
+    - Instalación de dependencias necesarias.  
+    - Cómo compilar o ejecutar la aplicación localmente (según el lenguaje y entorno usados).
+
+  - 🗂️ **Estructura del código fuente**:  
+    - Descripción de la organización general del código.  
+    - Carpetas principales.  
+    - Breve mención de los módulos o clases clave del sistema.
+
+  - 👥 **Créditos y roles del equipo**:  
+    - Lista de integrantes del grupo.  
+    - Tareas o responsabilidades principales que asumió cada persona durante el proyecto.
+
+2️⃣ `calificacion.md`: Autoevaluaciones y coevaluaciones de cada miembro del grupo.
+
+3️⃣ `uml.md`:  
+  Documento en **formato Markdown** con el **diagrama de clases UML** realizado utilizando **Mermaid**. Este archivo debe reflejar las relaciones entre clases, herencias, asociaciones, composición y cualquier otro aspecto clave del diseño orientado a objetos del sistema.
+
+> [!NOTE]
+> ✅ El `README.md` debe estar bien redactado, claro, y ser útil tanto para **usuarios finales** como para **desarrolladores** que quieran revisar o continuar el proyecto.
+
 ### 📊 Rúbrica de Evaluación del Proyecto
 
 > Esta rúbrica se utilizará para evaluar tanto por parte del profesor como a través de una autoevaluación y coevaluación del equipo. Todos los equipos deben incluir un archivo `calificacion.md` en su repositorio con los puntajes propuestos por cada integrante.
@@ -130,17 +176,19 @@ Para garantizar una experiencia de desarrollo colaborativa, profesional y organi
 
 | # | Criterio | Descripción | Puntaje Máx. | Niveles de Desempeño |
 |---|----------|-------------|---------------|------------------------|
-| 1 | **Herencia y Jerarquía de Clases** | Herencia de al menos dos niveles con una jerarquía clara y funcional. | 15 pts | **15 pts**: Hay al menos dos niveles de herencia correctamente implementados. Las relaciones entre clases son coherentes y se evidencia un diseño bien pensado.<br>**10 pts**: Se implementa herencia, pero falta profundidad o hay inconsistencias leves en la jerarquía.<br>**5 pts**: Se usó herencia de un solo nivel o con errores importantes.<br>**0 pts**: No hay herencia o su uso es incorrecto. |
-| 2 | **Herencia Múltiple** | Al menos una clase hereda de dos clases base distintas. | 10 pts | **10 pts**: La herencia múltiple está correctamente aplicada y resuelta sin ambigüedades.<br>**6 pts**: Está presente pero presenta problemas menores o ambigüedad funcional.<br>**3 pts**: Implementación poco clara o forzada.<br>**0 pts**: No hay herencia múltiple. |
-| 3 | **Polimorfismo** | Uso de métodos virtuales puros y sobreescritura para definir comportamientos en subclases. | 10 pts | **10 pts**: Métodos virtuales puros correctamente definidos y sobreescritos; se evidencia uso de polimorfismo dinámico.<br>**6 pts**: Uso parcial o limitado de virtuales (no puros), con polimorfismo incompleto.<br>**3 pts**: Uso incorrecto o poco funcional.<br>**0 pts**: No hay uso de métodos virtuales ni de polimorfismo. |
-| 4 | **Composición y Agregación** | El mapa contiene nodos, y los nodos contienen criaturas. Las criaturas tienen objetos internos. | 10 pts | **10 pts**: El diseño demuestra una clara relación de composición y agregación con estructuras anidadas.<br>**6 pts**: Parcialmente implementado o con estructura algo rígida.<br>**3 pts**: Uso limitado o con errores de diseño.<br>**0 pts**: No hay composición o agregación significativa. |
-| 5 | **Asociaciones entre Objetos** | Las criaturas interactúan sin poseerse directamente (punteros o referencias). | 5 pts | **5 pts**: Interacciones claras entre objetos independientes (ataques, alianzas, etc.).<br>**3 pts**: Asociaciones limitadas o ambiguas.<br>**1 pt**: Interacción casi inexistente.<br>**0 pts**: No hay asociación o es incorrecta. |
-| 6 | **Uso de Contenedores STL** | Se aplican contenedores como `vector`, `map`, `queue`, etc. | 10 pts | **10 pts**: Uso acertado y eficiente de múltiples contenedores STL.<br>**6 pts**: Uso básico de `vector` y uno más.<br>**3 pts**: Solo `vector`, uso limitado o innecesario.<br>**0 pts**: No se utilizan contenedores STL. |
-| 7 | **Números Aleatorios** | Uso de la librería `<random>` y sus componentes. | 5 pts | **5 pts**: Uso correcto de <random>.<br>**3 pts**: Uso limitado o con errores menores.<br>**1 pt**: Uso incorrecto o trivial.<br>**0 pts**: No se usa aleatoriedad. |
-| 8 | **Diseño General y Organización** | Claridad, cohesión, separación de responsabilidades. | 10 pts | **10 pts**: Código modular, limpio y bien organizado.<br>**6 pts**: Buen diseño con algunos puntos de mejora.<br>**3 pts**: Diseño poco claro o monolítico.<br>**0 pts**: Diseño desorganizado o sin estructura. |
-| 9 | **Funcionalidad General del Ecosistema** | Reglas de simulación, reproducción, muerte, mutación. | 15 pts | **15 pts**: Todas las funcionalidades del mundo están implementadas con éxito.<br>**10 pts**: Más del 75% implementado.<br>**5 pts**: Algunas funciones básicas están presentes.<br>**0 pts**: No hay funcionalidad clara. |
-| 10 | **Documentación del Código** | Comentarios útiles, README, uso opcional de Doxygen. | 5 pts | **5 pts**: Código comentado, README completo y útil.<br>**3 pts**: Comentarios o README faltantes o superficiales.<br>**1 pt**: Pobre documentación.<br>**0 pts**: Sin documentación. |
-| 11 | **Uso de GitHub y Gestión de Proyecto** | Pull requests, issues, ramas. | 5 pts | **5 pts**: Se cumple con todo: 5+ PRs, 20+ issues, ramas bien gestionadas.<br>**3 pts**: Uso parcial de herramientas.<br>**1 pt**: Repositorio desorganizado.<br>**0 pts**: Sin uso claro de GitHub. |
+| 1️⃣ | **Uso de GitHub y Gestión del Proyecto** | Uso activo de ramas, issues, revisiones y documentación del repositorio. | 10 pts | **10 pts**: Al menos 3 pull requests revisados, 10 issues con tareas y bugs resueltos, ramas separadas por funcionalidad.<br>**6 pts**: Uso parcial de PRs o issues, documentación mínima.<br>**3 pts**: Repositorio caótico o con poco uso de herramientas colaborativas.<br>**0 pts**: Sin trazabilidad ni gestión colaborativa. |
+| 2️⃣ | **Herencia y Jerarquía de Clases** | Uso adecuado de herencia con jerarquía funcional y coherente. | 10 pts | **10 pts**: Dos niveles o más de herencia correctamente implementados y con propósito claro.<br>**6 pts**: Herencia básica o con errores leves en la jerarquía.<br>**3 pts**: Herencia superficial o forzada.<br>**0 pts**: No hay herencia o es incorrecta. |
+| 3️⃣ | **Composición, Agregación y Asociación** | Relaciones entre objetos claramente diferenciadas y correctamente modeladas. | 10 pts | **10 pts**: El diseño evidencia relaciones de composición, agregación y asociaciones funcionales entre objetos.<br>**6 pts**: Relaciones están presentes, pero con ambigüedad o diseño rígido.<br>**3 pts**: Relaciones poco claras o inconsistentes.<br>**0 pts**: No se evidencia ningún tipo de relación entre objetos. |
+| 4️⃣ | **Polimorfismo** | Uso de métodos virtuales y sobreescritura en subclases. | 10 pts | **10 pts**: Métodos virtuales correctamente usados con sobreescritura coherente y polimorfismo dinámico funcional.<br>**6 pts**: Polimorfismo presente pero con errores menores o limitado.<br>**3 pts**: Implementación incorrecta o poco efectiva.<br>**0 pts**: No se aplica polimorfismo. |
+| 5️⃣ | **Uso de Contenedores STL** | Aplicación correcta y efectiva de estructuras de datos estándar. | 10 pts | **10 pts**: Uso pertinente de varios contenedores (`vector`, `map`, `queue`, etc.).<br>**6 pts**: Uso básico pero correcto.<br>**3 pts**: Uso innecesario o mal aplicado.<br>**0 pts**: No se usan contenedores STL. |
+| 6️⃣ | **Uso de Aleatoriedad** | Generación de eventos o comportamientos aleatorios con <random>. | 5 pts | **5 pts**: Uso correcto y con propósito claro.<br>**3 pts**: Uso básico o con errores menores.<br>**1 pt**: Uso incorrecto o irrelevante.<br>**0 pts**: No se usa aleatoriedad. |
+| 7️⃣ | **Persistencia de Datos** | Almacenamiento y recuperación de datos usando archivos o serialización. | 10 pts | **10 pts**: Guardado y carga implementados correctamente (archivos de texto, binarios, JSON, etc.).<br>**6 pts**: Persistencia funcional pero limitada.<br>**3 pts**: Presente pero poco útil o con errores.<br>**0 pts**: Sin persistencia. |
+| 8️⃣ | **Diseño y Organización del Código** | Claridad del diseño, modularidad y organización de archivos. | 10 pts | **10 pts**: Código limpio, modular, con clases separadas en `.h` y `.cpp`. Arquitectura clara.<br>**6 pts**: Organización mayormente correcta, pero con algunas clases sin modularizar o archivos mal distribuidos.<br>**3 pts**: Diseño poco claro, muchas clases en el mismo archivo.<br>**0 pts**: Código desordenado, sin separación entre declaración e implementación. |
+| 9️⃣ | **Manual del Usuario** | Guía clara y útil para el usuario final. | 15 pts | **15 pts**: Manual detallado con funcionalidades, casos de uso, capturas, requisitos, etc.<br>**10 pts**: Manual funcional pero con detalles faltantes.<br>**5 pts**: Muy básico o incompleto.<br>**0 pts**: No hay manual. |
+| 🔟 | **Documentación del Código** | Comentarios útiles y buena legibilidad. | 5 pts | **5 pts**: Código comentado y entendible, sin excesos.<br>**3 pts**: Comentarios parciales o superficiales.<br>**1 pt**: Comentarios escasos o irrelevantes.<br>**0 pts**: Sin documentación. |
+| 1️⃣1️⃣ | **README Técnico del Proyecto** | Archivo `README.md` completo con información técnica. | 5 pts | **5 pts**: Incluye descripción, instrucciones, estructura del código, guía de contribución, créditos, etc.<br>**3 pts**: Incompleto o desorganizado.<br>**1 pt**: Información mínima.<br>**0 pts**: No hay README o es irrelevante. |
+
+✅ **Total: 100 puntos**
 
 ---
 
