@@ -128,8 +128,6 @@ Para garantizar una experiencia de desarrollo colaborativa, profesional y organi
 
 El repositorio del proyecto debe incluir:
 
-¡Genial! Acá va todo integrado, con **la profundidad completa** que mencionaste, dentro del esquema original que ya tenías:
-
 ---
 
 ### 📂 **Archivos obligatorios del repositorio**
