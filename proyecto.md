@@ -124,10 +124,6 @@ Para garantizar una experiencia de desarrollo colaborativa, profesional y organi
     - Guía de contribución y uso de ramas.  
     - Créditos y roles del equipo.
 
-### 📂 **Archivos obligatorios del repositorio**
-
-El repositorio del proyecto debe incluir:
-
 ---
 
 ### 📂 **Archivos obligatorios del repositorio**
