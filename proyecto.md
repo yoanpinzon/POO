@@ -85,8 +85,6 @@ Cada iteración de tu programa (ciclo o “turno”) debe visitar todas las cria
 
 La forma en que representás visualmente tu mapa o el estado de las criaturas queda a tu elección, pero debe ser clara, informativa y coherente con el modelo diseñado.
 
-Perfecto, aquí tenés la sección de **Entregables del Proyecto** actualizada, quitando la mención a *GitHub Flow* pero manteniendo la estructura clara y profesional:
-
 ---
 
 ## 📦 **Entregables del Proyecto**
@@ -125,12 +123,6 @@ Para garantizar una experiencia de desarrollo colaborativa, profesional y organi
     - Estructura de carpetas y explicación del código.  
     - Guía de contribución y uso de ramas.  
     - Créditos y roles del equipo.
-
-### 📂 **Archivos obligatorios del repositorio**
-
-El repositorio del proyecto debe incluir:
-
-¡Genial! Acá va todo integrado, con **la profundidad completa** que mencionaste, dentro del esquema original que ya tenías:
 
 ---
 
