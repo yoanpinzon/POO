@@ -1,7 +1,7 @@
 
 ---
 
-# 💻 300CIS017 Programación Orientada a Objetos 2025-01  
+# 💻 300CIS017 Programación Orientada a Objetos 2025-02  
 ![Version](https://img.shields.io/badge/version-2.0-blue)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?color=#007ec6)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
