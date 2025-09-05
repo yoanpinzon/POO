@@ -109,7 +109,7 @@ ERROR
 1. **Acepta la tarea** haciendo clic en este enlace: [Assignment - Estacionamiento Intergaláctico](https://classroom.github.com/a/LhH1id5p).  
 2. **Clona tu repositorio** en tu computadora con el siguiente comando (reemplaza `TU_USUARIO` con tu nombre de usuario en GitHub):  
    ```bash
-   git clone https://github.com/profesorcito/tarea-1-TU_USUARIO.git
+   git clone https://github.com/profesorcito/tarea1-TU_USUARIO.git
    ```
 3. **Abre el proyecto en CLion** y escribe tu código en el archivo `main.cpp`.  
 4. **Verifica que tu código compile y pase los casos de prueba.**  
