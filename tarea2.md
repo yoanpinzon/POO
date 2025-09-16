@@ -1,5 +1,8 @@
 # **🧮 Tarea 2 - Sistema de Facturación Avanzado**
 
+[![Unirse a la tarea](https://img.shields.io/badge/%F0%9F%91%89%20Unirse%20a%20la%20tarea%20en%20GitHub%20Classroom-blue?style=for-the-badge)](https://classroom.github.com/a/qUmsg4K8)
+
+
 ## **📢🚨 FECHA LÍMITE: Lunes 22 de septiembre - 10:00am 🚨📢** <!-- omit in toc -->
 
 ⚠️ **ENTREGAS FUERA DE TIEMPO NO SERÁN ACEPTADAS.**  
