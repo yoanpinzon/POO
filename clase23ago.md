@@ -5,8 +5,8 @@
 ```mermaid
 classDiagram
     class Empleado {
-        - string nombre
-        - int salario
+        # string nombre
+        # int salario
         + Empleado()
         + Empleado(string nombre, int salario)
         + int calcularSalario()*
