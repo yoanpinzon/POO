@@ -54,8 +54,8 @@ classDiagram
         + void setComision(float comision)
     }
 
-    Empleado <|-- Gerente
     Empleado <|-- Ingeniero
+    Empleado <|-- Gerente
     Empleado <|-- Vendedor
 ```
 
