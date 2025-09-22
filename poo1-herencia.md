@@ -1002,6 +1002,13 @@ La función principal se encarga de:
 
 ---
 
+> [!IMPORTANT]
+> 
+> 👉 Una clase que contiene al menos una función virtual pura se convierte en una clase abstracta, y no se puede instanciar directamente.
+>
+
+---
+
 ### 💡 **¿Cómo funciona el uso del `map`?**  <!-- omit in toc -->
 
 El `map<int, vector<MagicalCreature*>> creatureMapByLevel;` se utiliza para **agrupar criaturas mágicas por su nivel**. Vamos a descomponer su funcionamiento:
