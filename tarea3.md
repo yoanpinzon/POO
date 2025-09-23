@@ -22,7 +22,7 @@ El programa debe:
 
 Se trabajará con **clases, herencia, métodos virtuales y vectores de punteros**.
 
-Se provee un código base, y tu objetivo es completar las funcionalidades faltantes y manejar correctamente casos especiales, asegurándote de que cada clase tenga un archivo .h para la declaración y un archivo .cpp separado para la implementación.
+Se provee un código base, y tu objetivo es completar las funcionalidades faltantes y manejar correctamente casos especiales.
 
 > ⚠️ **Importante:** La fecha límite es **lunes 29 de septiembre a las 11:59pm**.
 
