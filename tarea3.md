@@ -2,7 +2,7 @@
 
 [![Unirse a la tarea](https://img.shields.io/badge/%F0%9F%91%89%20Unirse%20a%20la%20tarea%20en%20GitHub%20Classroom-blue?style=for-the-badge)](https://classroom.github.com/a/KxW3VjAg)
 
-## **📢🚨 FECHA LÍMITE: Lunes 29 de septiembre - 10:00am 🚨📢** <!-- omit in toc -->
+## **📢🚨 FECHA LÍMITE: Lunes 29 de septiembre - 11:59pm 🚨📢** <!-- omit in toc -->
 
 ⚠️ **ENTREGAS FUERA DE TIEMPO NO SERÁN ACEPTADAS.**  
 ✅ **Haz `commit` y `push` antes del plazo y verifica tu entrega en GitHub Classroom.**
@@ -24,7 +24,7 @@ Se trabajará con **clases, herencia, métodos virtuales y vectores de punteros*
 
 Se provee un código base, y tu objetivo es completar las funcionalidades faltantes y manejar correctamente casos especiales, asegurándote de que cada clase tenga un archivo .h para la declaración y un archivo .cpp separado para la implementación.
 
-> ⚠️ **Importante:** La fecha límite es **lunes 29 de septiembre a las 10:00am**.
+> ⚠️ **Importante:** La fecha límite es **lunes 29 de septiembre a las 11:59pm**.
 
 
 ## **📌 Comandos del Programa**
