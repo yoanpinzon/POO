@@ -54,7 +54,7 @@ Debes construir una simulación basada en los principios de la programación ori
 - Un conjunto inicial de criaturas, cada una con atributos particulares.
 - Un sistema de **ciclos de vida**, donde las criaturas se reproducen, evolucionan, mueren o mutan.
 - Cambios en el entorno que influyen en el comportamiento de los seres vivientes.
-- Persistencia de los datos del mundo y sus criaturas mediante **JSON o XML**.
+- Persistencia de los datos del mundo y sus criaturas mediante **JSON y/o XML**.
 
 ---
 
@@ -82,7 +82,7 @@ Tu sistema debe aplicar claramente los siguientes conceptos de POO:
 
 ## 🌿 **Un Mundo en Constante Transformación**
 
-Cada iteración de tu programa (ciclo o “turno”) debe visitar todas las criaturas del mapa. En función de su estado, posición y entorno, decidirán si viven, mueren, migran, mutan o se reproducen. Esto convierte tu mundo en un sistema vivo inspirado, si querés, en *El Juego de la Vida* de Conway, pero con reglas y clases mucho más ricas.
+Cada iteración de tu programa (ciclo o “turno”) debe visitar todas las criaturas del mapa. En función de su estado, posición y entorno, decidirán si viven, mueren, migran, mutan o se reproducen. Esto convierte tu mundo en un sistema vivo inspirado, si quieres, en *El Juego de la Vida* de Conway, pero con reglas y clases mucho más ricas.
 
 La forma en que representás visualmente tu mapa o el estado de las criaturas queda a tu elección, pero debe ser clara, informativa y coherente con el modelo diseñado.
 
@@ -236,7 +236,7 @@ La calificación del proyecto se compone de **dos partes complementarias**:
    * El factor puede tomar **cualquier valor decimal entre 0.0 y 1.0**, de acuerdo con la claridad, seguridad y profundidad de las respuestas.
    * Un dominio sobresaliente se acerca a **1.0**.
    * Un desempeño parcial puede ubicarse en valores como **0.7, 0.5, 0.3**, etc.
-   * Una sustentación muy deficiente puede recibir incluso **0.0**.
+   * En casos donde no se logre responder adecuadamente o se evidencie desconocimiento profundo, el factor puede llegar a ser **0.0**.
 
 3. **Nota final:**
    La nota definitiva se calcula multiplicando:
@@ -257,6 +257,6 @@ La calificación del proyecto se compone de **dos partes complementarias**:
 
 > [!IMPORTANT] 
 >
-> - **Uso de Inteligencia Artificial:** Está **completamente permitido** el uso de herramientas de inteligencia artificial para asistir en el desarrollo del proyecto. **No será penalizado** de ninguna manera. Lo único indispensable es que el grupo **comprenda el código generado** y sea capaz de **explicarlo en detalle** si se le solicita.
+> - **Uso de Inteligencia Artificial:** Está **completamente permitido** el uso de herramientas de inteligencia artificial para asistir en el desarrollo del proyecto. **No será penalizado** de ninguna manera. Lo único indispensable es que **comprenda el código generado** y sea capaz de **explicarlo en detalle** si se le solicita.
 >
-> - **Adecuación del Proyecto a las Capacidades del Grupo:** Cada grupo tiene **plena libertad para ajustar el alcance del proyecto** de acuerdo con sus conocimientos y habilidades actuales. 
+> - **Adecuación del Proyecto a tus capacidades:** Cada estudiante tiene **plena libertad para ajustar el alcance del proyecto** de acuerdo con sus conocimientos y habilidades actuales. 
