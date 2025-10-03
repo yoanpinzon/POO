@@ -241,9 +241,7 @@ La calificación del proyecto se compone de **dos partes complementarias**:
 3. **Nota final:**
    La nota definitiva se calcula multiplicando:
 
-   [
-   \text{Nota final} = \text{Nota entregables} \times \text{Factor sustentación}
-   ]
+   > **Nota final = Nota de entregables × Factor de sustentación**
 
    #### 🔢 Ejemplos ilustrativos
 
