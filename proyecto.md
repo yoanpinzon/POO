@@ -171,55 +171,35 @@ Ejemplo:
 
 ---
 
+
 # 📅 Cronograma Completo de Sustentaciones
 
-## ✅ **Martes 04-nov-2025**
-
-| Hora          | Estudiante                  |
-| ------------- | --------------------------- |
-| 9:00 – 9:20   | Christian David Ruiz Medina |
-| 9:20 – 9:40   | David Gaviria Leiton        |
-| 9:40 – 10:00  | Derik Camilo Muñoz Calderon |
-| 10:00 – 10:20 | Esteban Posso Orozco        |
-| 10:20 – 10:40 | Juan David Narvaez Gelpud   |
-| 10:40 – 11:00 | Juan Esteban Marin Cardona  |
-
----
-
-## ✅ **Viernes 07-nov-2025**
-
-| Hora          | Estudiante                    |
-| ------------- | ----------------------------- |
-| 11:00 – 11:20 | Juan Esteban Ramirez Delarosa |
-| 11:20 – 11:40 | Juan Felipe Castillo Castaño  |
-| 11:40 – 12:00 | Juan Jose Larrahondo Giron    |
-| 12:00 – 12:20 | Juan Jose Rojas Canencio      |
-| 12:20 – 12:40 | Juan Manuel Camacho Ibarguen  |
-| 12:40 – 1:00  | Juan Miguel Caceres Catolico  |
-
----
 
 ## ✅ **Martes 11-nov-2025**
 
 | Hora          | Estudiante                     |
 | ------------- | ------------------------------ |
-| 9:00 – 9:20   | Juan Pablo Toro Ruiz           |
-| 9:20 – 9:40   | Julian Andres Rodriguez Castro |
+| 9:00 – 9:20   | Juan Felipe Castillo Castaño   |
+| 9:20 – 9:40   | Julián Andrés Rodríguez Castro |
 | 9:40 – 10:00  | Leidy Jimena Caso Piamba       |
-| 10:00 – 10:20 | Maria Camila Gaitan Angel      |
-| 10:20 – 10:40 | Moises Agudelo Ocampo          |
-| 10:40 – 11:00 | Nikolas Jimenez Sanchez        |
+| 10:00 – 10:20 | María Camila Gaitán Ángel      |
+| 10:20 – 10:40 | Moisés Agudelo Ocampo          |
+| 10:40 – 11:00 | Níkolas Jiménez Sánchez        |
+
 
 ---
 
 ## ✅ **Viernes 14-nov-2025**
 
-| Hora          | Estudiante                |
-| ------------- | ------------------------- |
-| 11:00 – 11:20 | Samuel Muñoz Quiroga      |
-| 11:20 – 11:40 | Santiago Lasso Garcia     |
-| 11:40 – 12:00 | Santiago Mazo Andrade     |
-| 12:00 – 12:20 | Thomas David Gomez Tamayo |
+| Hora          | Estudiante                    |
+| ------------- | ----------------------------- |
+| 11:00 – 11:20 | Samuel Muñoz Quiroga          |
+| 11:20 – 11:40 | Juan Esteban Ramírez Delarosa |
+| 11:40 – 12:00 | Santiago Mazo Andrade         |
+| 12:00 – 12:20 | Thomas David Gómez Tamayo     |
+| 12:20 – 12:40 | Juan Manuel Camacho Ibargüen  |
+| 12:40 – 1:00  | Juan Miguel Cáceres Católico  |
+| 1:00 – 1:20   | Juan José Larrahondo Girón    |
 
 ---
 
