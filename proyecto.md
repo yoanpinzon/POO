@@ -174,25 +174,11 @@ Ejemplo:
 
 # 📅 Cronograma Completo de Sustentaciones
 
-
-## ✅ **Martes 11-nov-2025**
-
-| Hora          | Estudiante                     |
-| ------------- | ------------------------------ |
-| 9:00 – 9:20   | Juan Felipe Castillo Castaño   |
-| 9:20 – 9:40   | Julián Andrés Rodríguez Castro |
-| 9:40 – 10:00  | Leidy Jimena Caso Piamba       |
-| 10:00 – 10:20 | María Camila Gaitán Ángel      |
-| 10:20 – 10:40 | Moisés Agudelo Ocampo          |
-| 10:40 – 11:00 | Níkolas Jiménez Sánchez        |
-
-
----
-
 ## ✅ **Viernes 14-nov-2025**
 
 | Hora          | Estudiante                    |
 | ------------- | ----------------------------- |
+| 10:40 – 11:00 | Juan Felipe Castillo Castaño  |
 | 11:00 – 11:20 | Samuel Muñoz Quiroga          |
 | 11:20 – 11:40 | Juan Esteban Ramírez Delarosa |
 | 11:40 – 12:00 | Santiago Mazo Andrade         |
